@@ -10,8 +10,8 @@
     "./data": "./src/data/index.ts",
     "./utils/premium-helper": "./src/utils/premium-helper.ts",
     "./utils/validators": "./src/utils/validators.ts",
-    "./utils/error-handler": "./src/utils/error-handler.ts",
-    "./messages/*": "./src/messages/*"
+    "./messages/*": "./src/messages/*",
+    "./data/city-aliases": "./src/data/city-aliases.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
