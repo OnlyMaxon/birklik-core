@@ -1,0 +1,69 @@
+/**
+ * Input validation utilities
+ */
+
+/**
+ * Validate phone number format for Azerbaijan
+ * Supports: +994501234567, 05012345678, 501234567
+ * @param phone Phone number string
+ * @returns true if valid Azerbaijan phone number
+ */
+export const validatePhoneNumber = (phone: string): boolean => {
+  if (!phone || typeof phone !== 'string') return false
+
+  // Remove spaces, dashes, parentheses
+  const cleaned = phone.replace(/[\s\-()]/g, '')
+
+  // Azerbaijan phone number patterns:
+  // +994XXXXXXXXXX (with +994 prefix)
+  // 0XXXXXXXXXX (with 0 prefix)
+  // XXXXXXXXXX (10 digits)
+  const azPhoneRegex = /^(\+994|0)?[1-9]\d{1,14}$/
+
+  return azPhoneRegex.test(cleaned) && cleaned.length >= 9
+}
+
+/**
+ * Validate email format
+ * @param email Email string
+ * @returns true if valid email format
+ */
+export const validateEmail = (email: string): boolean => {
+  if (!email || typeof email !== 'string') return false
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email) && email.length <= 254
+}
+
+/**
+ * Validate password strength
+ * Requires: at least 8 characters
+ *
+ * В описании стояло «6», в коде — 8. Порог подняли при аудите 2026-07-21, а
+ * комментарий забыли; правда здесь за кодом.
+ * @param password Password string
+ * @returns true if password meets requirements
+ */
+export const validatePassword = (password: string): boolean => {
+  if (!password || typeof password !== 'string') return false
+  return password.length >= 8
+}
+
+/**
+ * Validate name format
+ * @param name Name string
+ * @returns true if valid name (2-100 chars, letters/spaces/hyphens only)
+ */
+export const validateName = (name: string): boolean => {
+  if (!name || typeof name !== 'string') return false
+
+  const cleaned = name.trim()
+  // Allow letters (any language), spaces, hyphens, apostrophes
+  const nameRegex = /^[\p{L}\s\-']{2,100}$/u
+  return nameRegex.test(cleaned)
+}
+
+// Здесь была validateFile(file: File). Убрана при выносе в общий пакет: её
+// никто не вызывал, а тип File существует только в браузере — в React Native
+// файл приходит объектом с uri. Настоящая проверка загружаемых файлов живёт в
+// вебе, в src/services/file-validation.ts.

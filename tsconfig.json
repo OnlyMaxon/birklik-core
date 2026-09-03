@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    // Только ES и типы Node. DOM здесь намеренно НЕ подключён: это и есть
+    // страховка от того, чтобы в общий пакет заехало что-то браузерное —
+    // `document`, `window`, `File`. На такой код компилятор сразу ругнётся.
+    // Типы Node нужны ровно ради setTimeout, который есть везде, включая
+    // React Native.
+    "lib": ["ES2022"],
+    "types": ["node", "vitest/globals"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.json"]
+}

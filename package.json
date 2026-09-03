@@ -1,0 +1,25 @@
+{
+  "name": "@birklik/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Общая предметная логика Birklik.az: типы, справочники, тарифы, переводы",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types/index.ts",
+    "./data": "./src/data/index.ts",
+    "./utils/premium-helper": "./src/utils/premium-helper.ts",
+    "./utils/validators": "./src/utils/validators.ts",
+    "./utils/error-handler": "./src/utils/error-handler.ts",
+    "./messages/*": "./src/messages/*"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}
