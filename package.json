@@ -12,7 +12,8 @@
     "./utils/validators": "./src/utils/validators.ts",
     "./messages/*": "./src/messages/*",
     "./data/city-aliases": "./src/data/city-aliases.ts",
-    "./utils/display": "./src/utils/display.ts"
+    "./utils/display": "./src/utils/display.ts",
+    "./utils/auth-errors": "./src/utils/auth-errors.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
