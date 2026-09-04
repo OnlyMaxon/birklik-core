@@ -199,7 +199,14 @@
       "noAccount": "Don't have an account?",
       "hasAccount": "Already have an account?",
       "loginSuccess": "Successfully logged in!",
-      "registerSuccess": "Registration completed successfully!"
+      "registerSuccess": "Registration completed successfully!",
+      "resetPassword": "Reset password",
+      "resetLinkSent": "A password reset link has been sent to your email",
+      "verifyEmailTitle": "Confirm your email",
+      "verifyEmailBody": "A confirmation link has been sent to your email. Open it, then refresh this screen.",
+      "verifyEmailResend": "Send the link again",
+      "verifyEmailSent": "Link sent",
+      "logout": "Sign out"
     },
     "dashboard": {
       "welcome": "Welcome",

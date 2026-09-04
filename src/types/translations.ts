@@ -197,6 +197,13 @@ export interface Translations {
     hasAccount: string
     loginSuccess: string
     registerSuccess: string
+    resetPassword: string
+    resetLinkSent: string
+    verifyEmailTitle: string
+    verifyEmailBody: string
+    verifyEmailResend: string
+    verifyEmailSent: string
+    logout: string
   }
   dashboard: {
     welcome: string

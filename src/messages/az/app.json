@@ -199,7 +199,14 @@
       "noAccount": "Hesabınız yoxdur?",
       "hasAccount": "Hesabınız var?",
       "loginSuccess": "Uğurla daxil oldunuz!",
-      "registerSuccess": "Qeydiyyat uğurla tamamlandı!"
+      "registerSuccess": "Qeydiyyat uğurla tamamlandı!",
+      "resetPassword": "Şifrəni sıfırla",
+      "resetLinkSent": "Şifrə bərpası üçün link e-poçtunuza göndərildi",
+      "verifyEmailTitle": "E-poçtunuzu təsdiqləyin",
+      "verifyEmailBody": "Təsdiq linki e-poçtunuza göndərildi. Linkə keçdikdən sonra bu səhifəni yeniləyin.",
+      "verifyEmailResend": "Linki yenidən göndər",
+      "verifyEmailSent": "Link göndərildi",
+      "logout": "Çıxış"
     },
     "dashboard": {
       "welcome": "Xoş gəldiniz",
