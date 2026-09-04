@@ -203,7 +203,7 @@ export interface Translations {
     verifyEmailBody: string
     verifyEmailResend: string
     verifyEmailSent: string
-    logout: string
+    verifyEmailCheck: string
   }
   dashboard: {
     welcome: string
@@ -510,7 +510,8 @@ export interface Translations {
     linkCopied: string
     failedToCopyLink: string
     selectReason: string
-    reportedSuccess: string
+    reportedSuccess: string
+    empty: string
   }
   filters: {
     moreFilters: string

@@ -206,7 +206,7 @@
       "verifyEmailBody": "Ссылка для подтверждения отправлена на вашу почту. Перейдите по ней и обновите этот экран.",
       "verifyEmailResend": "Отправить ссылку ещё раз",
       "verifyEmailSent": "Ссылка отправлена",
-      "logout": "Выйти"
+      "verifyEmailCheck": "Проверить"
     },
     "dashboard": {
       "welcome": "Добро пожаловать",
@@ -502,7 +502,8 @@
       "linkCopied": "Ссылка скопирована!",
       "failedToCopyLink": "Не удалось скопировать ссылку",
       "selectReason": "Пожалуйста, выберите причину",
-      "reportedSuccess": "Жалоба отправлена успешно"
+      "reportedSuccess": "Жалоба отправлена успешно",
+      "empty": "Уведомлений нет"
     },
     "filters": {
       "moreFilters": "Доп. фильтры",

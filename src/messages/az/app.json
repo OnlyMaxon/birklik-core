@@ -206,7 +206,7 @@
       "verifyEmailBody": "Təsdiq linki e-poçtunuza göndərildi. Linkə keçdikdən sonra bu səhifəni yeniləyin.",
       "verifyEmailResend": "Linki yenidən göndər",
       "verifyEmailSent": "Link göndərildi",
-      "logout": "Çıxış"
+      "verifyEmailCheck": "Yoxla"
     },
     "dashboard": {
       "welcome": "Xoş gəldiniz",
@@ -502,7 +502,8 @@
       "linkCopied": "Keçid kopyalandı!",
       "failedToCopyLink": "Keçidi kopyalamaq uğursuz oldu",
       "selectReason": "Zəhmət olmasa səbəb seçin",
-      "reportedSuccess": "Şikayət uğurla göndərildi"
+      "reportedSuccess": "Şikayət uğurla göndərildi",
+      "empty": "Bildiriş yoxdur"
     },
     "filters": {
       "moreFilters": "Əlavə filtrlər",

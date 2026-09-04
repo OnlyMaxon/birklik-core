@@ -13,7 +13,8 @@
     "./messages/*": "./src/messages/*",
     "./data/city-aliases": "./src/data/city-aliases.ts",
     "./utils/display": "./src/utils/display.ts",
-    "./utils/auth-errors": "./src/utils/auth-errors.ts"
+    "./utils/auth-errors": "./src/utils/auth-errors.ts",
+    "./utils/basemap": "./src/utils/basemap.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",

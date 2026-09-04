@@ -206,7 +206,7 @@
       "verifyEmailBody": "A confirmation link has been sent to your email. Open it, then refresh this screen.",
       "verifyEmailResend": "Send the link again",
       "verifyEmailSent": "Link sent",
-      "logout": "Sign out"
+      "verifyEmailCheck": "Check again"
     },
     "dashboard": {
       "welcome": "Welcome",
@@ -502,7 +502,8 @@
       "linkCopied": "Link copied!",
       "failedToCopyLink": "Failed to copy link",
       "selectReason": "Please select a reason",
-      "reportedSuccess": "Report submitted successfully"
+      "reportedSuccess": "Report submitted successfully",
+      "empty": "No notifications"
     },
     "filters": {
       "moreFilters": "More filters",
