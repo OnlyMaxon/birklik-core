@@ -206,7 +206,10 @@
       "verifyEmailBody": "Ссылка для подтверждения отправлена на вашу почту. Перейдите по ней и обновите этот экран.",
       "verifyEmailResend": "Отправить ссылку ещё раз",
       "verifyEmailSent": "Ссылка отправлена",
-      "verifyEmailCheck": "Проверить"
+      "verifyEmailCheck": "Проверить",
+      "agreeToTermsPrefix": "Я принимаю условия ",
+      "agreeToTermsLink": "пользовательского соглашения",
+      "agreeToTermsRequired": "Вы должны согласиться с условиями использования"
     },
     "dashboard": {
       "welcome": "Добро пожаловать",

@@ -195,6 +195,17 @@ export interface Translations {
     forgotPassword: string
     noAccount: string
     hasAccount: string
+    /**
+     * Согласие с пользовательским соглашением при регистрации. Разбито надвое,
+     * потому что вторая часть — ссылка на сам документ.
+     *
+     * На сайте эти строки вшиты прямо в компонент формы, минуя словари.
+     * Формулировки перенесены оттуда дословно, чтобы приложение и сайт
+     * говорили одинаково.
+     */
+    agreeToTermsPrefix: string
+    agreeToTermsLink: string
+    agreeToTermsRequired: string
     loginSuccess: string
     registerSuccess: string
     resetPassword: string
@@ -510,7 +521,7 @@ export interface Translations {
     linkCopied: string
     failedToCopyLink: string
     selectReason: string
-    reportedSuccess: string
+    reportedSuccess: string
     empty: string
   }
   filters: {

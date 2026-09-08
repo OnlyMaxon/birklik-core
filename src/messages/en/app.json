@@ -206,7 +206,10 @@
       "verifyEmailBody": "A confirmation link has been sent to your email. Open it, then refresh this screen.",
       "verifyEmailResend": "Send the link again",
       "verifyEmailSent": "Link sent",
-      "verifyEmailCheck": "Check again"
+      "verifyEmailCheck": "Check again",
+      "agreeToTermsPrefix": "I agree to the ",
+      "agreeToTermsLink": "user agreement",
+      "agreeToTermsRequired": "You must agree to the user agreement"
     },
     "dashboard": {
       "welcome": "Welcome",

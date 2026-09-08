@@ -206,7 +206,10 @@
       "verifyEmailBody": "Təsdiq linki e-poçtunuza göndərildi. Linkə keçdikdən sonra bu səhifəni yeniləyin.",
       "verifyEmailResend": "Linki yenidən göndər",
       "verifyEmailSent": "Link göndərildi",
-      "verifyEmailCheck": "Yoxla"
+      "verifyEmailCheck": "Yoxla",
+      "agreeToTermsPrefix": "Mən ",
+      "agreeToTermsLink": "istifadəçi razılaşmasını qəbul edirəm",
+      "agreeToTermsRequired": "Siz istifadə şərtlərini qəbul etməlisiniz"
     },
     "dashboard": {
       "welcome": "Xoş gəldiniz",
