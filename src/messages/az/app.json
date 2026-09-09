@@ -564,7 +564,15 @@
       "backButton": "← Geri",
       "packageLabel": "Paket",
       "allListings": "Bütün Elanlar",
-      "searchListings": "Elanlarda axtarış"
+      "searchListings": "Elanlarda axtarış",
+      "filterAll": "Hamısı",
+      "filterActive": "Aktiv",
+      "filterPending": "Gözləyir",
+      "filterHidden": "Gizli",
+      "filterDrafts": "Qaralamalar",
+      "sortNewest": "Yeni",
+      "sortOldest": "Köhnə",
+      "renewDays": "gün"
     },
     "calendar": {
       "days": {

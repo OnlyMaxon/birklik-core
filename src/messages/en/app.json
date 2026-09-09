@@ -564,7 +564,15 @@
       "backButton": "← Back",
       "packageLabel": "Package",
       "allListings": "All Listings",
-      "searchListings": "Search listings"
+      "searchListings": "Search listings",
+      "filterAll": "All",
+      "filterActive": "Active",
+      "filterPending": "Pending",
+      "filterHidden": "Hidden",
+      "filterDrafts": "Drafts",
+      "sortNewest": "Newest",
+      "sortOldest": "Oldest",
+      "renewDays": "days"
     },
     "calendar": {
       "days": {

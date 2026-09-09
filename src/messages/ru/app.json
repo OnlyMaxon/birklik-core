@@ -564,7 +564,15 @@
       "backButton": "← Назад",
       "packageLabel": "Пакет",
       "allListings": "Все объявления",
-      "searchListings": "Поиск по объявлениям"
+      "searchListings": "Поиск по объявлениям",
+      "filterAll": "Все",
+      "filterActive": "Активные",
+      "filterPending": "Модерация",
+      "filterHidden": "Скрытые",
+      "filterDrafts": "Черновики",
+      "sortNewest": "Новые",
+      "sortOldest": "Старые",
+      "renewDays": "дней"
     },
     "calendar": {
       "days": {

@@ -586,6 +586,19 @@ export interface Translations {
      */
     allListings: string
     searchListings: string
+    /**
+     * Отбор и порядок в списке всех объявлений. Подписи тоже были вшиты в
+     * компонент на сайте — перенесены дословно.
+     */
+    filterAll: string
+    filterActive: string
+    filterPending: string
+    filterHidden: string
+    filterDrafts: string
+    sortNewest: string
+    sortOldest: string
+    /** Единица для кнопок быстрого продления тарифа: «+14 дней». */
+    renewDays: string
   }
   calendar: {
     days: {
