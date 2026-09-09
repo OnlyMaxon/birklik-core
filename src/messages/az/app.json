@@ -284,7 +284,9 @@
       "premiumListing": "Premium elan",
       "city": "Şəhər",
       "selectCity": "Şəhər seçin",
-      "bookingRequests": "Sifariş sorğuları"
+      "bookingRequests": "Sifariş sorğuları",
+      "promoteHint": "Elanı axtarışda yuxarı qaldırmaq və ödənişli tarifi uzatmaq üçün birklik.az saytına daxil olun — eyni hesabla girin və «Mənim elanlarım» bölməsini açın.",
+      "promoteOpen": "birklik.az saytını aç"
     },
     "form": {
       "title": "Başlıq",

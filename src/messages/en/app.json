@@ -284,7 +284,9 @@
       "premiumListing": "Premium listing",
       "city": "City",
       "selectCity": "Select a city",
-      "bookingRequests": "Booking Requests"
+      "bookingRequests": "Booking Requests",
+      "promoteHint": "To move your listing higher in search and extend a paid plan, go to birklik.az — sign in with the same account and open “My listings”.",
+      "promoteOpen": "Open birklik.az"
     },
     "form": {
       "title": "Title",
