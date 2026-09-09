@@ -89,8 +89,21 @@ export interface Property {
   description: LocalizedText
   address: LocalizedText
   owner: PropertyOwner
+  /** Средняя оценка, округлённая до десятых. Считает сервер по `ratings`. */
   rating?: number
+  /** Сколько человек оценило — длина `ratings`, не число комментариев. */
   reviews?: number
+  /**
+   * Оценки по одной на человека: ключ — его идентификатор.
+   *
+   * Картой, а не списком, намеренно: повторная оценка заменяет прежнюю, а не
+   * добавляет вторую от того же. Отсюда же берётся `reviews`.
+   *
+   * Поле существовало в базе и раньше — сервер писал его при оценке, — но в
+   * типе объявлено не было. Приложению оно понадобилось, чтобы показать
+   * человеку его собственную оценку закрашенными звёздами.
+   */
+  ratings?: Record<string, number>
   // Likes and comments
   likes?: string[] // Array of user IDs who liked this property
   favorites?: string[] // Array of user IDs who favorited this property
