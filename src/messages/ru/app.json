@@ -562,7 +562,9 @@
       "rejectionReasonHint": "Укажите причину отказа. Владельцу будет отправлено уведомление.",
       "listingReviewPage": "Проверка объявления",
       "backButton": "← Назад",
-      "packageLabel": "Пакет"
+      "packageLabel": "Пакет",
+      "allListings": "Все объявления",
+      "searchListings": "Поиск по объявлениям"
     },
     "calendar": {
       "days": {

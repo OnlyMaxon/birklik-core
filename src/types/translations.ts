@@ -579,6 +579,13 @@ export interface Translations {
     listingReviewPage: string
     backButton: string
     packageLabel: string
+    /**
+     * Раздел модераторки со ВСЕМИ объявлениями — в любом статусе, включая
+     * снятые и черновики. На сайте подпись была вшита прямо в компонент, мимо
+     * словарей; перенесена оттуда дословно.
+     */
+    allListings: string
+    searchListings: string
   }
   calendar: {
     days: {

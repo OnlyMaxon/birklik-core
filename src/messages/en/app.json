@@ -562,7 +562,9 @@
       "rejectionReasonHint": "Enter a reason for rejection. This will be sent as a notification to the owner.",
       "listingReviewPage": "Review Listing",
       "backButton": "← Back",
-      "packageLabel": "Package"
+      "packageLabel": "Package",
+      "allListings": "All Listings",
+      "searchListings": "Search listings"
     },
     "calendar": {
       "days": {

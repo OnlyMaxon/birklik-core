@@ -562,7 +562,9 @@
       "rejectionReasonHint": "Rədd səbəbini qeyd edin. Sahibi bildiriş alacaq.",
       "listingReviewPage": "Elana baxış",
       "backButton": "← Geri",
-      "packageLabel": "Paket"
+      "packageLabel": "Paket",
+      "allListings": "Bütün Elanlar",
+      "searchListings": "Elanlarda axtarış"
     },
     "calendar": {
       "days": {
