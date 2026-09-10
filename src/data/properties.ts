@@ -1,4 +1,4 @@
-import { Property, PropertyType, District, Amenity, LocationCategory } from '../types'
+import { Property, PropertyType, Amenity, LocationCategory } from '../types'
 import { tierRank } from '../utils/premium-helper'
 import { expandSearchTerms } from './city-aliases'
 
@@ -107,18 +107,10 @@ export const cities: CityOption[] = [
   { value: 'Zardab', az: 'Zərdab', en: 'Zardab', ru: 'Зардаб' }
 ]
 
-export const districts: District[] = [
-  'mardakan',
-  'novkhani',
-  'buzovna',
-  'bilgah',
-  'zagulba',
-  'pirshagi',
-  'shuvalan',
-  'baku',
-  'nabran',
-  'gabala'
-]
+// Здесь был districts: District[] — десять посёлков Баку. Убран 2026-09-10:
+// отбор идёт по city, а district в боевых данных давно стал свободным текстом
+// и управляемым списком не описывается. Сам тип District ещё нужен — формы
+// подачи и правки приводят к нему первый элемент locationTags.
 
 export const amenitiesList: Amenity[] = [
   'pool',

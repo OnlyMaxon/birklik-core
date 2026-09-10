@@ -24,32 +24,6 @@ export const validatePhoneNumber = (phone: string): boolean => {
 }
 
 /**
- * Validate email format
- * @param email Email string
- * @returns true if valid email format
- */
-export const validateEmail = (email: string): boolean => {
-  if (!email || typeof email !== 'string') return false
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailRegex.test(email) && email.length <= 254
-}
-
-/**
- * Validate password strength
- * Requires: at least 8 characters
- *
- * В описании стояло «6», в коде — 8. Порог подняли при аудите 2026-07-21, а
- * комментарий забыли; правда здесь за кодом.
- * @param password Password string
- * @returns true if password meets requirements
- */
-export const validatePassword = (password: string): boolean => {
-  if (!password || typeof password !== 'string') return false
-  return password.length >= 8
-}
-
-/**
  * Validate name format
  * @param name Name string
  * @returns true if valid name (2-100 chars, letters/spaces/hyphens only)
@@ -63,6 +37,12 @@ export const validateName = (name: string): boolean => {
   return nameRegex.test(cleaned)
 }
 
+// Здесь были validateEmail и validatePassword. Убраны 2026-09-10: формы входа
+// и регистрации на обеих сторонах полагаются на проверку Firebase, которая
+// возвращает код ошибки (auth/invalid-email, auth/weak-password), а текст к
+// нему даёт authErrorMessage. Своя проверка до отправки дублировала бы её и
+// разошлась порогами — в коде стояло 8 символов, у Firebase 6.
+//
 // Здесь была validateFile(file: File). Убрана при выносе в общий пакет: её
 // никто не вызывал, а тип File существует только в браузере — в React Native
 // файл приходит объектом с uri. Настоящая проверка загружаемых файлов живёт в
