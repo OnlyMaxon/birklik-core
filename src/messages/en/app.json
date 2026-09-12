@@ -284,9 +284,7 @@
       "premiumListing": "Premium listing",
       "city": "City",
       "selectCity": "Select a city",
-      "bookingRequests": "Booking Requests",
-      "promoteHint": "To move your listing higher in search and extend a paid plan, go to birklik.az — sign in with the same account and open “My listings”.",
-      "promoteOpen": "Open birklik.az"
+      "bookingRequests": "Booking Requests"
     },
     "form": {
       "title": "Title",
@@ -713,7 +711,7 @@
           {
             "number": "2",
             "title": "Information Collection",
-            "content": "2.1. Users provide information to the Service in the following cases:\n• during registration\n• when placing listings\n• while using the Service\n• when subscribing to notifications\n• when participating in surveys\n2.2. Participation in surveys is voluntary and requires User consent.\n2.3. By providing personal information, Users consent to its processing, retention, and transfer."
+            "content": "2.1. Users provide information to the Service in the following cases:\n• during registration\n• when placing listings\n• while using the Service\n• when subscribing to notifications\n• when participating in surveys\n• when using the mobile application\n2.2. Participation in surveys is voluntary and requires User consent.\n2.3. By providing personal information, Users consent to its processing, retention, and transfer."
           },
           {
             "number": "3",
@@ -723,7 +721,7 @@
           {
             "number": "4",
             "title": "Types of Information Collected",
-            "content": "4.1. Information provided by Users:\n• name and surname\n• phone number\n• email address\n• location and address information\n• listing content and images\n4.2. Automatically collected technical information:\n• IP address\n• browser type\n• device information\n• login history and activity"
+            "content": "4.1. Information provided by Users:\n• name and surname\n• phone number\n• email address\n• location and address information\n• listing content and images\n4.2. Automatically collected technical information:\n• IP address\n• browser type\n• device information\n• login history and activity\n4.3. Information additionally collected in the mobile application:\n• a device token for push notifications — required to deliver notifications about bookings, comments and ratings\n• the interface language selected in the application\n• application integrity verification data — confirms that a request came from the genuine application rather than a counterfeit\n4.4. The device token is removed from the account when the user signs out in the application, and automatically as soon as it ceases to be valid.\n4.5. The mobile application does not collect the precise location of the device, the contact list or the contents of device storage, and does not access the camera or microphone in the background."
           },
           {
             "number": "5",
@@ -753,7 +751,7 @@
           {
             "number": "10",
             "title": "Cookies and Similar Technologies",
-            "content": "10.1. The Service uses cookies and similar technologies.\n10.2. These technologies are used to:\n• remember user sessions\n• improve site performance\n• collect statistical information\n• display personalized advertising\n10.3. Continuing to use the Service means consent to cookies.\n10.4. Users can disable, delete, or block cookies in their browser settings."
+            "content": "10.1. The Service uses cookies and similar technologies.\n10.2. These technologies are used to:\n• remember user sessions\n• improve site performance\n• collect statistical information\n• display personalized advertising\n10.3. Continuing to use the Service means consent to cookies.\n10.4. Users can disable, delete, or block cookies in their browser settings.\n10.5. The mobile application does not use cookies. Sign-in information and the selected language are stored in the device's own memory and are deleted together with the application."
           },
           {
             "number": "11",

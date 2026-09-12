@@ -284,9 +284,7 @@
       "premiumListing": "Premium elan",
       "city": "Şəhər",
       "selectCity": "Şəhər seçin",
-      "bookingRequests": "Sifariş sorğuları",
-      "promoteHint": "Elanı axtarışda yuxarı qaldırmaq və ödənişli tarifi uzatmaq üçün birklik.az saytına daxil olun — eyni hesabla girin və «Mənim elanlarım» bölməsini açın.",
-      "promoteOpen": "birklik.az saytını aç"
+      "bookingRequests": "Sifariş sorğuları"
     },
     "form": {
       "title": "Başlıq",
@@ -713,7 +711,7 @@
           {
             "number": "2",
             "title": "Məlumat toplanması",
-            "content": "2.1. İstifadəçi Servisə məlumat təqdim edir:\n• qeydiyyat zamanı\n• elan yerləşdirərkən\n• Servisdən istifadə edərkən\n• bildirişlərə abunə olarkən\n• sorğular və ya anketlərdə iştirak edərkən\n2.2. Sorğularda iştirak yalnız İstifadəçinin razılığı ilə həyata keçirilir.\n2.3. İstifadəçi Servisə şəxsi məlumatlarını təqdim etməklə bu məlumatların işlənməsinə, saxlanmasına və ötürülməsinə razılıq verir."
+            "content": "2.1. İstifadəçi Servisə məlumat təqdim edir:\n• qeydiyyat zamanı\n• elan yerləşdirərkən\n• Servisdən istifadə edərkən\n• bildirişlərə abunə olarkən\n• sorğular və ya anketlərdə iştirak edərkən\n• mobil tətbiqdən istifadə edərkən\n2.2. Sorğularda iştirak yalnız İstifadəçinin razılığı ilə həyata keçirilir.\n2.3. İstifadəçi Servisə şəxsi məlumatlarını təqdim etməklə bu məlumatların işlənməsinə, saxlanmasına və ötürülməsinə razılıq verir."
           },
           {
             "number": "3",
@@ -723,7 +721,7 @@
           {
             "number": "4",
             "title": "Toplanan məlumatların növləri",
-            "content": "4.1. İstifadəçi tərəfindən təqdim olunan məlumatlar:\n• ad və soyad\n• telefon nömrəsi\n• elektron poçt ünvanı\n• yerləşmə və ünvan məlumatları\n• elan məzmunu və şəkillər\n4.2. Avtomatik toplanan texniki məlumatlar:\n• IP ünvan\n• brauzer növü\n• cihaz məlumatları\n• giriş tarixçəsi və aktivlik"
+            "content": "4.1. İstifadəçi tərəfindən təqdim olunan məlumatlar:\n• ad və soyad\n• telefon nömrəsi\n• elektron poçt ünvanı\n• yerləşmə və ünvan məlumatları\n• elan məzmunu və şəkillər\n4.2. Avtomatik toplanan texniki məlumatlar:\n• IP ünvan\n• brauzer növü\n• cihaz məlumatları\n• giriş tarixçəsi və aktivlik\n4.3. Mobil tətbiqdə əlavə olaraq toplanan məlumatlar:\n• push bildirişləri üçün cihaz nişanı — rezervasiyalar, şərhlər və qiymətləndirmələr barədə bildirişlərin çatdırılması üçün lazımdır\n• tətbiqdə seçilmiş interfeys dili\n• tətbiqin həqiqiliyinin yoxlanılmasına dair texniki məlumatlar — sorğunun saxta deyil, həqiqi tətbiqdən gəldiyini təsdiq edir\n4.4. Cihaz nişanı İstifadəçi tətbiqdən çıxdıqda hesabdan silinir, həmçinin etibarlılığını itirdiyi anda avtomatik silinir.\n4.5. Mobil tətbiq cihazın dəqiq yerini, kontakt siyahısını və cihaz yaddaşının məzmununu toplamır, fon rejimində kameraya və mikrofona müraciət etmir."
           },
           {
             "number": "5",
@@ -753,7 +751,7 @@
           {
             "number": "10",
             "title": "Cookies və oxşar texnologiyalar",
-            "content": "10.1. Servis cookies və oxşar texnologiyalardan istifadə edir.\n10.2. Bu texnologiyalar tətbiq olunur:\n• istifadəçi sessiyasını yadda saxlamaq üçün\n• saytın performansını artırmaq üçün\n• statistik məlumat toplamaq üçün\n• fərdiləşdirilmiş reklam göstərmək üçün\n10.3. Servisdən istifadəni davam etdirməklə İstifadəçi cookies istifadəsinə razılıq verir.\n10.4. İstifadəçi brauzer parametrlərində cookies-i deaktiv edə, silə, bloklaya bilər."
+            "content": "10.1. Servis cookies və oxşar texnologiyalardan istifadə edir.\n10.2. Bu texnologiyalar tətbiq olunur:\n• istifadəçi sessiyasını yadda saxlamaq üçün\n• saytın performansını artırmaq üçün\n• statistik məlumat toplamaq üçün\n• fərdiləşdirilmiş reklam göstərmək üçün\n10.3. Servisdən istifadəni davam etdirməklə İstifadəçi cookies istifadəsinə razılıq verir.\n10.4. İstifadəçi brauzer parametrlərində cookies-i deaktiv edə, silə, bloklaya bilər.\n10.5. Mobil tətbiq cookies istifadə etmir. Girişə dair məlumatlar və seçilmiş dil cihazın öz yaddaşında saxlanılır və tətbiqlə birlikdə silinir."
           },
           {
             "number": "11",
