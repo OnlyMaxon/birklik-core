@@ -354,6 +354,17 @@
       "selectDuration": "Müddət seçin",
       "plans": "paket planlar"
     },
+    "promote": {
+      "title": "Elanı irəli çək",
+      "subtitle": "Paket və müddət seçin. Ödəniş Google Play vasitəsilə keçir.",
+      "buy": "Al",
+      "checking": "Ödəniş yoxlanılır…",
+      "success": "Paket {date} tarixinə qədər aktivdir",
+      "failed": "Satınalma tamamlanmadı. Məbləğ çıxılıbsa, Google onu avtomatik qaytaracaq.",
+      "unavailable": "Mağaza əlçatan deyil. Bir az sonra yenidən yoxlayın.",
+      "pendingFound": "Tamamlanmamış satınalma tapıldı — yoxlanılır.",
+      "activeUntil": "Hazırda {date} tarixinə qədər aktivdir"
+    },
     "validation": {
       "emailInvalid": "Etibarlı email ünvanı daxil edin",
       "phoneRequired": "Telefon nömrəsi daxil edin",

@@ -370,6 +370,27 @@ export interface Translations {
     premiumFeatures: string
     premiumDisplays: string
   }
+  /**
+   * Покупка тарифа в приложении через магазин.
+   *
+   * Названия тарифов, сроки и перечни возможностей не дублируются — они уже
+   * лежат в `pricing`. Здесь только то, чего на сайте нет: сама покупка.
+   * Цен тоже нет: их задаёт магазин своими ценовыми уровнями, и приложение
+   * показывает то, что вернул Google.
+   */
+  promote: {
+    title: string
+    subtitle: string
+    buy: string
+    checking: string
+    /** Содержит {date}. */
+    success: string
+    failed: string
+    unavailable: string
+    pendingFound: string
+    /** Содержит {date}. */
+    activeUntil: string
+  }
   validation: {
     emailInvalid: string
     phoneRequired: string

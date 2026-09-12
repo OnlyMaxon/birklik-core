@@ -354,6 +354,17 @@
       "vipDisplays": "Top 3 week visibility",
       "premiumDisplays": "Professional tier with all features"
     },
+    "promote": {
+      "title": "Promote listing",
+      "subtitle": "Choose a plan and duration. Payment goes through Google Play.",
+      "buy": "Buy",
+      "checking": "Verifying payment…",
+      "success": "Plan active until {date}",
+      "failed": "Could not complete the purchase. If you were charged, Google will refund it automatically.",
+      "unavailable": "The store is unavailable. Please try again later.",
+      "pendingFound": "An unfinished purchase was found — verifying it.",
+      "activeUntil": "Currently active until {date}"
+    },
     "validation": {
       "emailInvalid": "Enter a valid email address",
       "phoneRequired": "Phone number is required",
