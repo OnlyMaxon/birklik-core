@@ -696,6 +696,31 @@ export interface Translations {
         content: string
       }>
     }
+    /**
+     * Удаление аккаунта. Не «страница» в том же смысле, что остальные здесь:
+     * строки нужны и вебу, и приложению — Google требует и общедоступный адрес,
+     * и кнопку внутри приложения. Поэтому плоский набор, а не sections.
+     */
+    accountDeletion: {
+      title: string
+      intro: string
+      whatTitle: string
+      items: string[]
+      paymentsNote: string
+      bookingsNote: string
+      warning: string
+      signedInAs: string
+      notSignedIn: string
+      goToLogin: string
+      passwordLabel: string
+      deleteButton: string
+      deleting: string
+      doneTitle: string
+      doneText: string
+      wrongPassword: string
+      failed: string
+      contactNote: string
+    }
   }
   listing: {
     createTitle: string

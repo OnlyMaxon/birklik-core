@@ -820,6 +820,32 @@
             "content": "9.1. Disputes are resolved through negotiation.\n9.2. Azerbaijani legislation applies.\n9.3. The Agreement can be modified unilaterally.\n9.4. The invalidity of individual items does not affect other items.\n\nConclusion\nUsers confirm that: they have read this Agreement, agree with all terms, and fully accept them."
           }
         ]
+      },
+      "accountDeletion": {
+        "title": "Delete your account",
+        "intro": "Here you can permanently delete your Birklik.az account and all data linked to it. You can do this on this page or in the mobile app, under \"Profile\".",
+        "whatTitle": "What gets deleted",
+        "items": [
+          "All your listings and their photos",
+          "Your bookings, and bookings made on your listings",
+          "Your comments, replies, ratings, likes and favourites",
+          "Your notifications",
+          "Your profile: name, email, phone, avatar — and the login itself"
+        ],
+        "paymentsNote": "Payment records are not deleted but anonymised: the link to you is removed, the record itself stays for accounting.",
+        "bookingsNote": "Guests holding a confirmed booking on your listings will be notified of the cancellation.",
+        "warning": "This cannot be undone. The data is not recoverable.",
+        "signedInAs": "Signed in as:",
+        "notSignedIn": "Sign in to delete your account — otherwise we have no way to confirm which account to delete.",
+        "goToLogin": "Sign in",
+        "passwordLabel": "Enter your password again to confirm",
+        "deleteButton": "Delete account permanently",
+        "deleting": "Deleting...",
+        "doneTitle": "Account deleted",
+        "doneText": "Your account and all its data have been deleted. Thank you for being with us.",
+        "wrongPassword": "Incorrect password",
+        "failed": "Deletion failed. Please try again later or write to info@birklik.az.",
+        "contactNote": "Questions: info@birklik.az"
       }
     },
     "listing": {

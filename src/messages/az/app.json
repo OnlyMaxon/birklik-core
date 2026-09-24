@@ -820,6 +820,32 @@
             "content": "9.1. Mübahisələr danışıqlar yolu ilə həll olunur.\n9.2. Azərbaycan qanunvericiliyi tətbiq edilir.\n9.3. Razılaşma birtərəfli dəyişdirilə bilər.\n9.4. Ayrı maddələrin etibarsızlığı digər maddələrə təsir etmir.\n\nYekun\nİstifadəçi təsdiq edir ki: bu Razılaşmanı oxuyub, bütün şərtlərlə razıdır və onları tam qəbul edir."
           }
         ]
+      },
+      "accountDeletion": {
+        "title": "Hesabın silinməsi",
+        "intro": "Burada Birklik.az hesabınızı və onunla bağlı bütün məlumatları həmişəlik silə bilərsiniz. Bunu həm bu səhifədə, həm də mobil tətbiqdə «Profil» bölməsindən edə bilərsiniz.",
+        "whatTitle": "Nə silinir",
+        "items": [
+          "Bütün elanlarınız və onların şəkilləri",
+          "Sizin bronlaşdırmalarınız və elanlarınıza edilmiş bronlaşdırmalar",
+          "Şərhləriniz, cavablarınız, qiymətləndirmələriniz, bəyənmələriniz və seçilmişləriniz",
+          "Bildirişləriniz",
+          "Profiliniz: ad, e-poçt, telefon, avatar — və girişin özü"
+        ],
+        "paymentsNote": "Ödəniş qeydləri silinmir, lakin şəxssizləşdirilir: sizinlə əlaqə silinir, qeydin özü mühasibat üçün qalır.",
+        "bookingsNote": "Elanlarınıza təsdiqlənmiş bronlaşdırması olan qonaqlara ləğv barədə bildiriş göndəriləcək.",
+        "warning": "Bu addım geri qaytarıla bilməz. Məlumatlar bərpa olunmur.",
+        "signedInAs": "Daxil olmusunuz:",
+        "notSignedIn": "Silmək üçün hesabınıza daxil olun — silinəcək hesabı yalnız bu yolla təsdiqləyə bilərik.",
+        "goToLogin": "Daxil ol",
+        "passwordLabel": "Təsdiq üçün şifrənizi yenidən daxil edin",
+        "deleteButton": "Hesabı həmişəlik sil",
+        "deleting": "Silinir...",
+        "doneTitle": "Hesab silindi",
+        "doneText": "Hesabınız və bütün məlumatlarınız silindi. Bizi seçdiyiniz üçün təşəkkür edirik.",
+        "wrongPassword": "Şifrə yanlışdır",
+        "failed": "Silmək alınmadı. Bir az sonra yenidən cəhd edin və ya info@birklik.az ünvanına yazın.",
+        "contactNote": "Sualınız varsa: info@birklik.az"
       }
     },
     "listing": {
