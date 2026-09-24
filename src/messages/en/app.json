@@ -352,7 +352,8 @@
       "vipFeatures": "✓ VIP badge on listing, priority moderation",
       "premiumFeatures": "✓ Premium badge, top placement, 30 photos",
       "vipDisplays": "Top 3 week visibility",
-      "premiumDisplays": "Professional tier with all features"
+      "premiumDisplays": "Professional tier with all features",
+      "storeCharge": "Google Play charges"
     },
     "promote": {
       "title": "Promote listing",

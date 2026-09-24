@@ -352,6 +352,8 @@ export interface Translations {
     headline: string
   }
   pricing: {
+    /** Подпись под ценой в приложении: чем именно спишет магазин. */
+    storeCharge: string
     free: string
     standard: string
     premium: string
