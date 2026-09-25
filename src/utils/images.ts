@@ -91,14 +91,33 @@ export function imageUrlFromStoragePath(path: string, origin = ''): string {
 }
 
 /**
+ * Нарисованная на стороне заглушка аватара.
+ *
+ * ⚠️ Раньше и сайт, и приложение подставляли вместо пустого аватара картинку с
+ * `ui-avatars.com`, передавая в адресе НАСТОЯЩЕЕ ИМЯ человека:
+ * `?name=JALIL%20ORUJLI`. Имена всех пользователей уходили на чужой сервер при
+ * каждой отрисовке, а договора обработки с ним нет. Для анкеты Google Play это
+ * передача личных данных третьим лицам.
+ *
+ * Выдавать такие адреса перестали, но в базе они остались — у всех, кто
+ * зарегистрировался раньше, и внутри старых комментариев. Поэтому здесь
+ * проверка: такой адрес считается ОТСУТСТВИЕМ аватара, и вместо него рисуются
+ * инициалы. Чистить базу не обязательно — незапрошенный адрес никуда не уходит.
+ */
+export function isPlaceholderAvatar(source: string | undefined): boolean {
+  return typeof source === 'string' && source.includes('ui-avatars.com')
+}
+
+/**
  * Hide legacy Firebase URLs behind the image API.
  *
  * Адрес, который разобрать не удалось, возвращается как есть: в базе попадаются
- * ссылки на чужие домены (например, заглушки аватаров с ui-avatars.com), и
- * ломать их незачем.
+ * ссылки на чужие домены, и ломать их незачем. Исключение одно — заглушки
+ * аватаров: они отдаются как «аватара нет», см. isPlaceholderAvatar.
  */
 export function toImageApiUrl(source: string | undefined, origin = ''): string | undefined {
   if (!source) return source
+  if (isPlaceholderAvatar(source)) return undefined
   const path = storagePathFromImageSource(source)
   return path ? imageUrlFromStoragePath(path, origin) : source
 }

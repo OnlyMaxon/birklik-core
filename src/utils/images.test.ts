@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest'
-import {imageUrlFromStoragePath, storagePathFromImageSource, toImageApiUrl} from './images'
+import {imageUrlFromStoragePath, isPlaceholderAvatar, storagePathFromImageSource, toImageApiUrl} from './images'
 
 const SITE = 'https://birklik.az'
 const PATH = 'properties/user-1/photo.webp'
@@ -63,14 +63,39 @@ describe('toImageApiUrl', () => {
       .toBe(`${SITE}/api/images/properties/user-1/photo.webp`)
   })
 
+  // Здесь раньше стоял обратный случай: заглушка с ui-avatars.com возвращалась
+  // как есть. Поведение изменено НАМЕРЕННО — в её адресе ехало настоящее имя
+  // человека, см. isPlaceholderAvatar. Само правило «чужой домен не ломаем»
+  // осталось, оно просто проверяется на другом адресе.
   it('чужой домен остаётся нетронутым', () => {
-    // Заглушки аватаров с ui-avatars.com — ломать их незачем.
-    const avatar = 'https://ui-avatars.com/api/?name=Guest'
-    expect(toImageApiUrl(avatar, SITE)).toBe(avatar)
+    const external = 'https://example.com/photo.jpg'
+    expect(toImageApiUrl(external, SITE)).toBe(external)
   })
 
   it('пустое значение проходит насквозь', () => {
     expect(toImageApiUrl(undefined, SITE)).toBeUndefined()
     expect(toImageApiUrl('', SITE)).toBe('')
+  })
+})
+
+// ⚠️ Сторожит утечку имени на сторонний сервер. Заглушки аватаров строились как
+// `ui-avatars.com/api/?name=<настоящее имя>` — имя уходило третьей стороне при
+// каждой отрисовке. Выдавать их перестали, но в базе они остались, поэтому
+// разбор обязан считать такой адрес отсутствием аватара.
+describe('заглушки аватаров со стороннего сервера', () => {
+  const placeholder = 'https://ui-avatars.com/api/?name=JALIL%20ORUJLI&background=1a365d&color=fff'
+
+  it('опознаётся как заглушка', () => {
+    expect(isPlaceholderAvatar(placeholder)).toBe(true)
+    expect(isPlaceholderAvatar('https://birklik.az/api/images/avatars/u1/a.png')).toBe(false)
+    expect(isPlaceholderAvatar(undefined)).toBe(false)
+  })
+
+  it('разбор отдаёт её как отсутствие аватара', () => {
+    expect(toImageApiUrl(placeholder)).toBeUndefined()
+  })
+
+  it('настоящий аватар по-прежнему проходит', () => {
+    expect(toImageApiUrl('avatars/u1/a.png')).toBe('/api/images/avatars/u1/a.png')
   })
 })
