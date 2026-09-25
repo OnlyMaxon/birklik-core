@@ -100,4 +100,43 @@ describe('filterProperties: поиск по названию места', () => 
   it('по-прежнему находит по тексту заголовка', () => {
     expect(filterProperties([baku], { search: 'Mərdəkan' })).toHaveLength(1)
   })
+
+  // ⚠️ Отсюда и ниже — второй заход, 2026-09-25. Первой починки было мало: она
+  // сравнивала написания посимвольно, поэтому находила только то, что кто-то
+  // заранее внёс в список синонимов. Теперь сравнивается свёртка (place-match).
+  it('находит по тексту заголовка без азербайджанских букв', () => {
+    expect(filterProperties([baku], { search: 'Merdekan' })).toHaveLength(1)
+  })
+
+  const gabala: Property = {
+    ...baseProperty,
+    id: 'gabala-1',
+    city: 'Gabala',
+    district: '',
+    locationTags: [],
+    title: { az: 'Dağ evi', en: 'Mountain house' },
+    address: { az: 'Qəbələ', en: 'Qəbələ' }
+  }
+
+  it('находит город написанием, которого в справочнике нет', () => {
+    for (const query of ['Gebele', 'Qabala', 'Gabala', 'Габала', 'Qəbələ']) {
+      expect(filterProperties([gabala], { search: query }), query).toHaveLength(1)
+    }
+  })
+
+  it('находит Sumqayıt по русской передаче через и', () => {
+    const sumgayit: Property = { ...baseProperty, id: 'sum-1', city: 'Sumgayit', locationTags: [] }
+    expect(filterProperties([sumgayit], { search: 'Сумгаит' })).toHaveLength(1)
+  })
+
+  // Опечатки в отборе НЕ прощаются намеренно: здесь человек видит только
+  // результат и принимает его за истину. Запас на опечатку даётся списку
+  // подсказок, где выбор остаётся за человеком.
+  it('опечатка в отборе не срабатывает', () => {
+    expect(filterProperties([gabala], { search: 'Gebelo' })).toHaveLength(0)
+  })
+
+  it('запрос без букв и цифр ничего не отсеивает', () => {
+    expect(filterProperties([baku, gabala], { search: '—' })).toHaveLength(2)
+  })
 })

@@ -1,6 +1,7 @@
 import { Property, PropertyType, Amenity, LocationCategory } from '../types'
 import { tierRank } from '../utils/premium-helper'
-import { expandSearchTerms } from './city-aliases'
+import { expandSearchTerms, resolveCity } from './city-aliases'
+import { foldPlace, placeMatches, placeMatchScore } from './place-match'
 
 export interface FilterOption {
   key: string
@@ -43,7 +44,7 @@ export const cities: CityOption[] = [
   { value: 'Balaken', az: 'Balakən', en: 'Balaken', ru: 'Балакен' },
   { value: 'Beylaghan', az: 'Beyləqan', en: 'Beylaghan', ru: 'Бейлаган' },
   { value: 'Barda', az: 'Bərdə', en: 'Barda', ru: 'Барда' },
-  { value: 'Bilasuvar', az: 'Biləsuvar', en: 'Bilasuvar', ru: 'Бильджасувар' },
+  { value: 'Bilasuvar', az: 'Biləsuvar', en: 'Bilasuvar', ru: 'Билясувар' },
   { value: 'Jabrayil', az: 'Cəbrayıl', en: 'Jabrayil', ru: 'Джабраил' },
   { value: 'Jalilabad', az: 'Cəlilabad', en: 'Jalilabad', ru: 'Джалилабад' },
   { value: 'Culfa', az: 'Culfa', en: 'Culfa', ru: 'Джульфа' },
@@ -52,10 +53,10 @@ export const cities: CityOption[] = [
   { value: 'Gadabay', az: 'Gədəbəy', en: 'Gadabay', ru: 'Гедабей' },
   { value: 'Ganja', az: 'Gəncə', en: 'Ganja', ru: 'Гянджа' },
   { value: 'Goranboy', az: 'Goranboy', en: 'Goranboy', ru: 'Геранбой' },
-  { value: 'Goycay', az: 'Göyçay', en: 'Goycay', ru: 'Геий-Чай' },
+  { value: 'Goycay', az: 'Göyçay', en: 'Goycay', ru: 'Гёйчай' },
   { value: 'Goygol', az: 'Göygöl', en: 'Goygol', ru: 'Гейгель' },
-  { value: 'Haciqabul', az: 'Hacıqabul', en: 'Haciqabul', ru: 'Хачмас' },
-  { value: 'Khachmaz', az: 'Xaçmaz', en: 'Khachmaz', ru: 'Хачмас' },
+  { value: 'Haciqabul', az: 'Hacıqabul', en: 'Haciqabul', ru: 'Гаджигабул' },
+  { value: 'Khachmaz', az: 'Xaçmaz', en: 'Khachmaz', ru: 'Хачмаз' },
   { value: 'Khankendy', az: 'Xankəndi', en: 'Khankendy', ru: 'Ханкенди' },
   { value: 'Khizi', az: 'Xızı', en: 'Khizi', ru: 'Хизи' },
   { value: 'Khocali', az: 'Xocalı', en: 'Khocali', ru: 'Ходжалы' },
@@ -106,6 +107,49 @@ export const cities: CityOption[] = [
   { value: 'Zangilan', az: 'Zəngilan', en: 'Zangilan', ru: 'Зангилан' },
   { value: 'Zardab', az: 'Zərdab', en: 'Zardab', ru: 'Зардаб' }
 ]
+
+/**
+ * Город справочника по ЛЮБОМУ его написанию, или `undefined`.
+ *
+ * Требуется точное совпадение свёрток, без запаса на опечатку: результат идёт
+ * в геокодер, а метка не на том месте хуже отсутствующей.
+ */
+export function cityByAnySpelling(text: string): CityOption | undefined {
+  if (!foldPlace(text)) return undefined
+  return cities.find(city =>
+    [city.value, city.az, city.en, city.ru].some(name => placeMatchScore(name, text) === 4)
+  )
+}
+
+/**
+ * Приводит запрос к геокодеру к официальному азербайджанскому написанию.
+ *
+ * ⚠️ Это не украшательство, а исправление неверной метки. Измерено 2026-09-25:
+ * на «Gebele» Nominatim отвечает «Qədim Qəbələ, 8 Noyabr prospekti, Xətai
+ * rayonu» — улицей в БАКУ, а не городом Qəbələ. Ответ приходит успешный и
+ * правдоподобный, поэтому поймать такое нечем: объявление молча получало метку
+ * в другом городе. На «Qəbələ» и «Gabala» тот же геокодер отвечает верно.
+ *
+ * Разбирается и запрос из нескольких слов: «Gebele rayonu» → «Qəbələ rayonu».
+ * Если ничего не узнали — остаётся прежний список синонимов, он умеет заменять
+ * подстроки внутри адреса.
+ */
+export function resolveCityQuery(query: string): string {
+  const whole = cityByAnySpelling(query)
+  if (whole) return whole.az
+
+  const parts = query.split(/([\s,]+)/)
+  let changed = false
+  const rebuilt = parts.map(part => {
+    const city = part.trim() ? cityByAnySpelling(part) : undefined
+    if (!city || city.az === part) return part
+    changed = true
+    return city.az
+  })
+  if (changed) return rebuilt.join('')
+
+  return resolveCity(query)
+}
 
 // Здесь был districts: District[] — десять посёлков Баку. Убран 2026-09-10:
 // отбор идёт по city, а district в боевых данных давно стал свободным текстом
@@ -488,12 +532,19 @@ export const filterProperties = (
     // Search filter
     if (filters.search) {
       const searchTerms = expandSearchTerms(filters.search)
-      const matchesTitle = searchTerms.some(term =>
-        Object.values(property.title).some(t => t.toLowerCase().includes(term))
-      )
-      const matchesAddress = searchTerms.some(term =>
-        Object.values(property.address).some(a => a.toLowerCase().includes(term))
-      )
+
+      // ⚠️ Сравнивается СВЁРНУТОЕ написание, а не исходное: иначе «Merdekan»
+      // не находит «Mərdəkan», а «Gebele» — «Qəbələ». Правила свёртки и
+      // причины, по которым они именно такие, — в place-match.ts.
+      const foldedTerms = searchTerms.map(foldPlace).filter(Boolean)
+      const matchesText = (values: string[]) =>
+        foldedTerms.some(term => values.some(value => foldPlace(value).includes(term)))
+
+      // В запросе не осталось ни буквы, ни цифры — отбирать не по чему.
+      if (foldedTerms.length === 0) return true
+
+      const matchesTitle = matchesText(Object.values(property.title))
+      const matchesAddress = matchesText(Object.values(property.address))
       // ⚠️ Город и место внутри него ищутся ОТДЕЛЬНО, и без этого поиск по
       // названию города не работал ни на одном языке.
       //
@@ -504,10 +555,10 @@ export const filterProperties = (
       // поэтому расхождение долго выглядело как «поиск не понимает русский».
       //
       // Сопоставляем со ВСЕМИ написаниями из справочника: значение (`Baku`),
-      // азербайджанское (`Bakı`), английское и русское (`Баку`). Так запрос на
-      // любом из трёх языков находит одно и то же, и отдельные синонимы для
-      // этого не нужны.
-      const matchesLocation = searchTerms.some(term => locationNames(property).some(name => name.includes(term)))
+      // азербайджанское (`Bakı`), английское и русское (`Баку`) — и каждое
+      // через свёртку. Поэтому «Gebele», «Qabala» и «Габала» приводят к одному
+      // городу, и отдельный синоним на каждое написание заводить не нужно.
+      const matchesLocation = searchTerms.some(term => locationNames(property).some(name => placeMatches(name, term)))
 
       const matchedAmenity = (Object.entries(amenityAliases) as Array<[Amenity, string[]]>).find(([, aliases]) =>
         searchTerms.some(term => aliases.some(alias => alias.includes(term) || term.includes(alias)))
