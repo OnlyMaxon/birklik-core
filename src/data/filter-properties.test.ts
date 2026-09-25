@@ -59,3 +59,45 @@ describe('filterProperties publication filtering', () => {
     expect(result).toHaveLength(0)
   })
 })
+
+// Поиск по названию города не работал НИ НА ОДНОМ языке, и это видно только на
+// настоящих данных: у боевых объявлений `city` равен `Baku`, а заголовок и
+// адрес — «Mərdəkan», «Şüvəlan». Слова «Baku» в тексте нет, а сравнивались
+// только заголовок с адресом. Фильтр в интерфейсе при этом работал — он смотрит
+// `city` напрямую, поэтому расхождение выглядело как «не понимает русский».
+describe('filterProperties: поиск по названию места', () => {
+  const baku: Property = {
+    ...baseProperty,
+    id: 'baku-1',
+    city: 'Baku',
+    district: 'mardakan',
+    locationTags: ['mardakan'],
+    // Ровно как в боевых данных: города в тексте нет.
+    title: { az: 'Mərdəkan 5 otaqlı həyət evi', en: 'Mərdəkan 5 otaqlı həyət evi' },
+    address: { az: 'Mərdəkan', en: 'Mərdəkan' }
+  }
+
+  it('находит по русскому названию города', () => {
+    expect(filterProperties([baku], { search: 'Баку' })).toHaveLength(1)
+  })
+
+  it('находит по английскому названию города', () => {
+    expect(filterProperties([baku], { search: 'Baku' })).toHaveLength(1)
+  })
+
+  it('находит по азербайджанскому названию города', () => {
+    expect(filterProperties([baku], { search: 'Bakı' })).toHaveLength(1)
+  })
+
+  it('находит по метке места внутри города', () => {
+    expect(filterProperties([baku], { search: 'mardakan' })).toHaveLength(1)
+  })
+
+  it('не находит чужой город', () => {
+    expect(filterProperties([baku], { search: 'Гянджа' })).toHaveLength(0)
+  })
+
+  it('по-прежнему находит по тексту заголовка', () => {
+    expect(filterProperties([baku], { search: 'Mərdəkan' })).toHaveLength(1)
+  })
+})

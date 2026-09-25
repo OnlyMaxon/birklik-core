@@ -382,6 +382,35 @@ export const districtLabel = (district: string | undefined, t: any): string => {
   return labels?.[district] || district
 }
 
+/**
+ * Все написания места объявления в нижнем регистре — для текстового поиска.
+ *
+ * Собирает три источника: город из справочника (значение и три языка), метки
+ * места внутри города вместе с их подписями и старое поле `district`.
+ *
+ * ⚠️ Метки и `district` в боевых данных — свободный текст: `merdekan`,
+ * `suvelan`, названия сёл как есть. Поэтому сами ключи тоже идут в сравнение,
+ * а не только найденные подписи: подписи для половины значений нет.
+ */
+const locationNames = (property: Property): string[] => {
+  const names: string[] = []
+
+  const city = cities.find(entry => entry.value === property.city)
+  if (city) names.push(city.value, city.az, city.en, city.ru)
+  else if (property.city) names.push(property.city)
+
+  const options = [...cityLocationOptions.rayon, ...cityLocationOptions.metro]
+  for (const tag of property.locationTags ?? []) {
+    names.push(tag)
+    const option = options.find(entry => entry.key === tag)
+    if (option) names.push(option.az, option.en)
+  }
+
+  if (property.district) names.push(property.district)
+
+  return names.filter(Boolean).map(name => name.toLowerCase())
+}
+
 export const getOptionLabel = (options: FilterOption[] | LocationOption[], key: string, t: any): string => {
   const option = options.find((entry) => entry.key === key)
   if (!option) return key
@@ -465,12 +494,27 @@ export const filterProperties = (
       const matchesAddress = searchTerms.some(term =>
         Object.values(property.address).some(a => a.toLowerCase().includes(term))
       )
+      // ⚠️ Город и место внутри него ищутся ОТДЕЛЬНО, и без этого поиск по
+      // названию города не работал ни на одном языке.
+      //
+      // Причина в данных: в боевых объявлениях `city` равен `Baku`, а заголовок
+      // и адрес у них — «Mərdəkan», «Şüvəlan». Слова «Baku» там нет вовсе, так
+      // что сравнение по заголовку и адресу его найти не могло в принципе.
+      // Фильтр в интерфейсе при этом работал — он сравнивает `city` напрямую,
+      // поэтому расхождение долго выглядело как «поиск не понимает русский».
+      //
+      // Сопоставляем со ВСЕМИ написаниями из справочника: значение (`Baku`),
+      // азербайджанское (`Bakı`), английское и русское (`Баку`). Так запрос на
+      // любом из трёх языков находит одно и то же, и отдельные синонимы для
+      // этого не нужны.
+      const matchesLocation = searchTerms.some(term => locationNames(property).some(name => name.includes(term)))
+
       const matchedAmenity = (Object.entries(amenityAliases) as Array<[Amenity, string[]]>).find(([, aliases]) =>
         searchTerms.some(term => aliases.some(alias => alias.includes(term) || term.includes(alias)))
       )
       const matchesAmenity = matchedAmenity ? property.amenities.includes(matchedAmenity[0]) : false
 
-      if (!matchesTitle && !matchesAddress && !matchesAmenity) return false
+      if (!matchesTitle && !matchesAddress && !matchesLocation && !matchesAmenity) return false
     }
 
     // Type filter

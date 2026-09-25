@@ -1,4 +1,8 @@
 const CITY_ALIASES: Record<string, string> = {
+  // Bakı — самого крупного города здесь не было вовсе
+  baku: 'Bakı',
+  baki: 'Bakı',
+  баку: 'Bakı',
   // Qəbələ
   gebele: 'Qəbələ',
   gabala: 'Qəbələ',
@@ -47,7 +51,7 @@ const CITY_ALIASES: Record<string, string> = {
   yevlak: 'Yevlax',
   // Zaqatala
   zagatala: 'Zaqatala',
-  zagатала: 'Zaqatala',
+  zaqatala: 'Zaqatala',
   // Balakən
   balakan: 'Balakən',
   balaken: 'Balakən',
