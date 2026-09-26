@@ -881,7 +881,9 @@
       "extendFailed": "Failed to extend premium",
       "extendSuccess": "Premium extended for 3 more weeks",
       "premiumExtended": "Premium Extended",
-      "contactAfterBooking": "Contact info will appear after booking"
+      "contactAfterBooking": "Contact info will appear after booking",
+      "districtsTab": "Districts",
+      "metroTab": "Metro"
     },
     "offline": {
       "banner": "No internet connection",

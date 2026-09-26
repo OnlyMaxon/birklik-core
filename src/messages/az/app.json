@@ -881,7 +881,9 @@
       "extendFailed": "Premium uzatmaq uğursuz oldu",
       "extendSuccess": "Premium 3 həftə uzadıldı",
       "premiumExtended": "Premium uzadıldı",
-      "contactAfterBooking": "Əlaqə məlumatları sifarişdən sonra göstəriləcək"
+      "contactAfterBooking": "Əlaqə məlumatları sifarişdən sonra göstəriləcək",
+      "districtsTab": "Rayonlar",
+      "metroTab": "Metro"
     },
     "offline": {
       "banner": "İnternet bağlantısı yoxdur",
