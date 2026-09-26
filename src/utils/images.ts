@@ -35,14 +35,19 @@ function decodePath(path: string): string | null {
   }
 }
 
+/** Разбор адреса прокси `/api/images/...` — и относительного, и полного. */
+function pathFromImageApi(pathname: string): string | null {
+  const encodedPath = pathname.slice(IMAGE_API_PREFIX.length).split(/[?#]/, 1)[0]
+  const path = decodePath(encodedPath)
+  return path && isAllowedStoragePath(path) ? path : null
+}
+
 /** Return the Firebase Storage object path represented by an app or legacy URL. */
 export function storagePathFromImageSource(source: string): string | null {
   if (!source) return null
 
   if (source.startsWith(IMAGE_API_PREFIX)) {
-    const encodedPath = source.slice(IMAGE_API_PREFIX.length).split(/[?#]/, 1)[0]
-    const path = decodePath(encodedPath)
-    return path && isAllowedStoragePath(path) ? path : null
+    return pathFromImageApi(source)
   }
 
   if (source.startsWith('gs://')) {
@@ -53,6 +58,26 @@ export function storagePathFromImageSource(source: string): string | null {
 
   try {
     const url = new URL(source)
+
+    // ⚠️ ПОЛНЫЙ адрес прокси — `https://birklik.az/api/images/...`. Его строит
+    // САМО приложение: `imageUrlFromStoragePath` получает от него `origin`,
+    // потому что относительному пути в React Native не от чего отсчитываться.
+    // При правке объявления показанные адреса сохраняются обратно в документ.
+    //
+    // Разбора у этого вида не было, и ветку `catch` он тоже не задевал: `new URL`
+    // на нём отрабатывает успешно. Возвращался `null` — а удаление объявления
+    // молча пропускает всё, что не разобралось. Найдено 2026-09-26: после
+    // удаления объявления, которое правили с телефона, в хранилище остались ВСЕ
+    // пять снимков. Второе объявление, поданное и удалённое без правки,
+    // подчистилось начисто — потому и выглядело исправным.
+    //
+    // Хост намеренно не сверяется: за прокси стоит собственное хранилище, и
+    // отдать он может только `properties/` и `avatars/` — это проверяет
+    // `isAllowedStoragePath`. Сверка с birklik.az сломала бы предпросмотр и
+    // любой домен, кроме боевого.
+    if (url.pathname.startsWith(IMAGE_API_PREFIX)) {
+      return pathFromImageApi(url.pathname + url.search)
+    }
 
     if (url.hostname === 'firebasestorage.googleapis.com') {
       const objectMarker = '/o/'

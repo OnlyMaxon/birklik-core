@@ -99,3 +99,29 @@ describe('заглушки аватаров со стороннего серве
     expect(toImageApiUrl('avatars/u1/a.png')).toBe('/api/images/avatars/u1/a.png')
   })
 })
+
+// ⚠️ Полный адрес прокси. Его строит САМО приложение (`imageUrlFromStoragePath`
+// с origin), и при правке объявления он попадает в документ. Разбора не было:
+// под относительный префикс не подпадает, хост не гугловый, а `new URL`
+// отрабатывает — значит и ветка `catch` не срабатывала. Возвращался `null`, и
+// удаление объявления молча оставляло все снимки в хранилище.
+describe('полный адрес прокси /api/images', () => {
+  it('разбирается так же, как относительный', () => {
+    expect(storagePathFromImageSource('https://birklik.az/api/images/properties/user-1/photo.webp'))
+      .toBe('properties/user-1/photo.webp')
+  })
+
+  it('работает с любым доменом — предпросмотр и местная сборка тоже', () => {
+    expect(storagePathFromImageSource('http://localhost:3000/api/images/avatars/user-1/a.webp'))
+      .toBe('avatars/user-1/a.webp')
+  })
+
+  it('не выпускает за пределы разрешённых папок', () => {
+    expect(storagePathFromImageSource('https://birklik.az/api/images/secrets/key.txt')).toBeNull()
+  })
+
+  it('хвост запроса отбрасывается', () => {
+    expect(storagePathFromImageSource('https://birklik.az/api/images/properties/u/p.webp?w=800'))
+      .toBe('properties/u/p.webp')
+  })
+})
