@@ -730,6 +730,9 @@ export interface Translations {
     selectCity: string
     selectDistrictMetro: string
     selectDistrict: string
+    /** Подписи переключателя «Районы / Метро» в выборе места — см. CityLocationPicker. */
+    districtsTab: string
+    metroTab: string
     enterPrice: string
     enterRooms: string
     maxImagesStandard: string
