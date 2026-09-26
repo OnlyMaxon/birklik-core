@@ -125,3 +125,23 @@ describe('полный адрес прокси /api/images', () => {
       .toBe('properties/u/p.webp')
   })
 })
+
+// ⚠️ Сайт получает от телефона УЖЕ переписанный адрес: приложение показывает
+// картинки через прокси с доменом и при правке сохраняет показанное обратно.
+// Проверяется, что показ от этого не ломается — ни двойной обёртки, ни потери.
+describe('полный адрес прокси переживает повторную обработку', () => {
+  const full = 'https://birklik.az/api/images/properties/user-1/photo.webp'
+
+  it('сайт сводит его к относительному пути', () => {
+    expect(toImageApiUrl(full)).toBe('/api/images/properties/user-1/photo.webp')
+  })
+
+  it('приложение получает тот же полный адрес, а не вложенный', () => {
+    expect(toImageApiUrl(full, 'https://birklik.az')).toBe(full)
+  })
+
+  it('обработка повторно ничего не наслаивает', () => {
+    const once = toImageApiUrl(full, 'https://birklik.az')
+    expect(toImageApiUrl(once, 'https://birklik.az')).toBe(full)
+  })
+})
