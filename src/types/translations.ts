@@ -675,7 +675,8 @@ export interface Translations {
       title: string
       lastUpdated: string
       sections: Array<{
-        number: string
+        /** Нумерованные пункты документа. Вступительный раздел номера не имеет. */
+        number?: string
         title: string
         content: string
       }>
@@ -683,7 +684,8 @@ export interface Translations {
     privacy: {
       title: string
       sections: Array<{
-        number: string
+        /** Нумерованные пункты документа. Вступительный раздел номера не имеет. */
+        number?: string
         title: string
         content: string
         isList?: boolean
@@ -693,7 +695,8 @@ export interface Translations {
       title: string
       lastUpdated?: string
       sections: Array<{
-        number: string
+        /** Нумерованные пункты документа. Вступительный раздел номера не имеет. */
+        number?: string
         title: string
         content: string
       }>

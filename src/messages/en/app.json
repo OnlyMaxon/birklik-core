@@ -658,8 +658,12 @@
       },
       "terms": {
         "title": "BIRKLIK.AZ – USAGE RULES",
-        "lastUpdated": "Last Updated: 07.05.2026",
+        "lastUpdated": "Last Updated: 01.10.2026",
         "sections": [
+          {
+            "title": "Service provider",
+            "content": "The services of the Birklik.az platform are provided by:\n• EA DIGITAL GROUP, MMC\n• Tax ID (VÖEN): 2906348882\n• Address: 145 Samad Vurgun Str., apt. 50, Sumgait 5000, Azerbaijan\n• Email: info@birklik.az\nThese terms apply between the user and that legal entity. Paid services are provided by the same entity."
+          },
           {
             "number": "1",
             "title": "General Terms",
@@ -715,6 +719,10 @@
       "privacy": {
         "title": "Privacy Policy",
         "sections": [
+          {
+            "title": "Data controller",
+            "content": "The Birklik.az platform is operated by, and personal data is processed under the responsibility of:\n• EA DIGITAL GROUP, MMC\n• Tax ID (VÖEN): 2906348882\n• Address: 145 Samad Vurgun Str., apt. 50, Sumgait 5000, Azerbaijan\n• Email: info@birklik.az\nAll questions and requests regarding your personal data should be sent to this address."
+          },
           {
             "number": "1",
             "title": "Privacy Policy Basics",
@@ -775,6 +783,10 @@
       "userAgreement": {
         "title": "BIRKLIK.AZ – USER AGREEMENT",
         "sections": [
+          {
+            "title": "Contracting party",
+            "content": "This agreement is concluded between the user and the following legal entity:\n• EA DIGITAL GROUP, MMC\n• Tax ID (VÖEN): 2906348882\n• Address: 145 Samad Vurgun Str., apt. 50, Sumgait 5000, Azerbaijan\n• Email: info@birklik.az\nThe same entity is the seller of paid services and the party to invoices and refunds."
+          },
           {
             "number": "1",
             "title": "General Terms",

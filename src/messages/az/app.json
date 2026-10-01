@@ -658,8 +658,12 @@
       },
       "terms": {
         "title": "BIRKLIK.AZ – İSTİFADƏ QAYDALARI",
-        "lastUpdated": "Son yenilənmə tarixi: 07.05.2026",
+        "lastUpdated": "Son yenilənmə tarixi: 01.10.2026",
         "sections": [
+          {
+            "title": "Xidmətin təminatçısı",
+            "content": "Birklik.az platformasının xidmətlərini təqdim edən hüquqi şəxs:\n• EA DIGITAL GROUP, MMC\n• QEYDİYYAT № (VÖEN): 2906348882\n• Ünvan: Səməd Vurğun küç. 145, mən. 50, Sumqayıt 5000, Azərbaycan\n• E-poçt: info@birklik.az\nAşağıdakı qaydalar istifadəçi ilə həmin hüquqi şəxs arasında qüvvədədir. Ödənişli xidmətlər də həmin şəxs tərəfindən göstərilir."
+          },
           {
             "number": "1",
             "title": "Ümumi müddəalar",
@@ -715,6 +719,10 @@
       "privacy": {
         "title": "Məxfilik siyasəti",
         "sections": [
+          {
+            "title": "Məlumat operatoru",
+            "content": "Birklik.az platformasını idarə edən və şəxsi məlumatların işlənməsinə cavabdeh olan hüquqi şəxs:\n• EA DIGITAL GROUP, MMC\n• QEYDİYYAT № (VÖEN): 2906348882\n• Ünvan: Səməd Vurğun küç. 145, mən. 50, Sumqayıt 5000, Azərbaycan\n• E-poçt: info@birklik.az\nŞəxsi məlumatlarınızla bağlı bütün suallar və sorğular bu ünvana göndərilir."
+          },
           {
             "number": "1",
             "title": "Məxfilik siyasətinin əsasları",
@@ -775,6 +783,10 @@
       "userAgreement": {
         "title": "BIRKLIK.AZ – İSTİFADƏÇİ RAZILAŞMASI",
         "sections": [
+          {
+            "title": "Razılaşmanın tərəfi",
+            "content": "Bu razılaşma istifadəçi ilə aşağıdakı hüquqi şəxs arasında bağlanır:\n• EA DIGITAL GROUP, MMC\n• QEYDİYYAT № (VÖEN): 2906348882\n• Ünvan: Səməd Vurğun küç. 145, mən. 50, Sumqayıt 5000, Azərbaycan\n• E-poçt: info@birklik.az\nPullu xidmətlərin satıcısı, hesab-fakturaların və geri qaytarmaların tərəfi həmin hüquqi şəxsdir."
+          },
           {
             "number": "1",
             "title": "Ümumi şərtlər",
