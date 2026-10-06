@@ -45,7 +45,9 @@
       "cancelBtn": "Cancel",
       "moreFilters": "More filters",
       "near": "Near",
-      "city": "City"
+      "city": "City",
+      "compactView": "Compact",
+      "normalView": "Normal"
     },
     "property": {
       "perNight": "night",
@@ -518,7 +520,23 @@
       "failedToCopyLink": "Failed to copy link",
       "selectReason": "Please select a reason",
       "reportedSuccess": "Report submitted successfully",
-      "empty": "No notifications"
+      "empty": "No notifications",
+      "titles": {
+        "booking": "New booking request",
+        "bookingApproved": "Booking approved",
+        "bookingRejected": "Booking rejected",
+        "comment": "New comment on your listing",
+        "favorite": "Added to favorites",
+        "reply": "New reply to your comment",
+        "premium": "Premium is expiring",
+        "commentReport": "Comment reported",
+        "rating": "Your listing was rated",
+        "cancellationRequest": "Cancellation request",
+        "cancellationApproved": "Cancellation approved",
+        "cancellationRejected": "Cancellation rejected",
+        "listingRejected": "Listing not approved",
+        "invoiceSent": "Invoice sent"
+      }
     },
     "filters": {
       "moreFilters": "More filters",

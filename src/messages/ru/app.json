@@ -45,7 +45,9 @@
       "cancelBtn": "Отмена",
       "moreFilters": "Доп. фильтры",
       "near": "Рядом",
-      "city": "Город"
+      "city": "Город",
+      "compactView": "Компактный",
+      "normalView": "Обычный"
     },
     "property": {
       "perNight": "ночь",
@@ -518,7 +520,23 @@
       "failedToCopyLink": "Не удалось скопировать ссылку",
       "selectReason": "Пожалуйста, выберите причину",
       "reportedSuccess": "Жалоба отправлена успешно",
-      "empty": "Уведомлений нет"
+      "empty": "Уведомлений нет",
+      "titles": {
+        "booking": "Новый запрос на бронирование",
+        "bookingApproved": "Бронирование подтверждено",
+        "bookingRejected": "Бронирование отклонено",
+        "comment": "Новый комментарий к объявлению",
+        "favorite": "Добавлено в избранное",
+        "reply": "Новый ответ на ваш комментарий",
+        "premium": "Премиум истекает",
+        "commentReport": "Жалоба на комментарий",
+        "rating": "Ваше объявление оценили",
+        "cancellationRequest": "Запрос на отмену брони",
+        "cancellationApproved": "Отмена подтверждена",
+        "cancellationRejected": "Отмена отклонена",
+        "listingRejected": "Объявление не одобрено",
+        "invoiceSent": "Счёт отправлен"
+      }
     },
     "filters": {
       "moreFilters": "Доп. фильтры",

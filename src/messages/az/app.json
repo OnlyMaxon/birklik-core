@@ -45,7 +45,9 @@
       "cancelBtn": "Ləğv et",
       "moreFilters": "Əlavə filtrlər",
       "near": "Yaxında",
-      "city": "Şəhər"
+      "city": "Şəhər",
+      "compactView": "Kompakt",
+      "normalView": "Normal"
     },
     "property": {
       "perNight": "gecə",
@@ -518,7 +520,23 @@
       "failedToCopyLink": "Keçidi kopyalamaq uğursuz oldu",
       "selectReason": "Zəhmət olmasa səbəb seçin",
       "reportedSuccess": "Şikayət uğurla göndərildi",
-      "empty": "Bildiriş yoxdur"
+      "empty": "Bildiriş yoxdur",
+      "titles": {
+        "booking": "Yeni rezervasiya sorğusu",
+        "bookingApproved": "Rezervasiya təsdiqləndi",
+        "bookingRejected": "Rezervasiya rədd edildi",
+        "comment": "Elanınıza yeni şərh",
+        "favorite": "Seçilmişlərə əlavə edildi",
+        "reply": "Şərhinizə yeni cavab",
+        "premium": "Premium müddəti bitir",
+        "commentReport": "Şərhə şikayət",
+        "rating": "Elanınız qiymətləndirildi",
+        "cancellationRequest": "Rezervasiyanın ləğvi sorğusu",
+        "cancellationApproved": "Ləğv təsdiqləndi",
+        "cancellationRejected": "Ləğv rədd edildi",
+        "listingRejected": "Elan təsdiqlənmədi",
+        "invoiceSent": "Hesab göndərildi"
+      }
     },
     "filters": {
       "moreFilters": "Əlavə filtrlər",

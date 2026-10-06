@@ -1,3 +1,5 @@
+import type {NotificationType} from './notifications'
+
 export type Language = 'az' | 'en' | 'ru'
 
 export interface Translations {
@@ -48,6 +50,9 @@ export interface Translations {
     moreFilters: string
     near: string
     city: string
+    /** Подписи переключателя вида списка: две карточки в ряду или одна. */
+    compactView: string
+    normalView: string
   }
   property: {
     perNight: string
@@ -546,6 +551,15 @@ export interface Translations {
     selectReason: string
     reportedSuccess: string
     empty: string
+    /**
+     * Заголовок карточки по виду уведомления.
+     *
+     * ⚠️ Берётся вместо `title` из документа: тот пишется сервером
+     * по-английски и языка читателя не знает. Ключи перечисляет
+     * `NotificationType`, поэтому забытый вид поймает проверка типов, а не
+     * человек, увидевший пустую карточку.
+     */
+    titles: Record<NotificationType, string>
   }
   filters: {
     moreFilters: string
