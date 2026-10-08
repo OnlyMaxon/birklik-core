@@ -211,7 +211,8 @@
       "verifyEmailCheck": "Check again",
       "agreeToTermsPrefix": "I agree to the ",
       "agreeToTermsLink": "user agreement",
-      "agreeToTermsRequired": "You must agree to the user agreement"
+      "agreeToTermsRequired": "You must agree to the user agreement",
+      "resetCheckSpam": "The email arrives within a couple of minutes. If not, check your Spam folder."
     },
     "dashboard": {
       "welcome": "Welcome",
@@ -469,7 +470,8 @@
       "yes": "Yes",
       "no": "No",
       "show": "Show",
-      "hide": "Hide"
+      "hide": "Hide",
+      "send": "Send"
     },
     "common": {
       "night": "night",

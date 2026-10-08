@@ -211,7 +211,8 @@
       "verifyEmailCheck": "Yoxla",
       "agreeToTermsPrefix": "Mən ",
       "agreeToTermsLink": "istifadəçi razılaşmasını qəbul edirəm",
-      "agreeToTermsRequired": "Siz istifadə şərtlərini qəbul etməlisiniz"
+      "agreeToTermsRequired": "Siz istifadə şərtlərini qəbul etməlisiniz",
+      "resetCheckSpam": "Məktub bir neçə dəqiqəyə gəlir. Gəlməsə, «Spam» qovluğunu yoxlayın."
     },
     "dashboard": {
       "welcome": "Xoş gəldiniz",
@@ -469,7 +470,8 @@
       "yes": "Bəli",
       "no": "Xeyr",
       "show": "Göstər",
-      "hide": "Gizlət"
+      "hide": "Gizlət",
+      "send": "Göndər"
     },
     "common": {
       "night": "gecə",

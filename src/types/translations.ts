@@ -215,6 +215,13 @@ export interface Translations {
     registerSuccess: string
     resetPassword: string
     resetLinkSent: string
+    /**
+     * Подсказка про папку «Спам» после отправки ссылки.
+     *
+     * ⚠️ Нужна потому, что `senderDomain` у писем не задан и они уходят со
+     * служебного адреса Firebase — такие часто отправляются в спам.
+     */
+    resetCheckSpam: string
     verifyEmailTitle: string
     verifyEmailBody: string
     verifyEmailResend: string
@@ -472,6 +479,8 @@ export interface Translations {
     clear: string
     search: string
     filter: string
+    /** Кнопка отправки — окно сброса пароля. */
+    send: string
     reset: string
     login: string
     register: string
