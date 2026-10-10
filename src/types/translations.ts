@@ -383,6 +383,19 @@ export interface Translations {
     vipDisplays: string
     premiumFeatures: string
     premiumDisplays: string
+    /**
+     * Что даёт тариф — построчно, как в сетке тарифов на сайте.
+     *
+     * ⚠️ Короткие `vipFeatures` и `premiumFeatures` выше этого НЕ заменяют:
+     * они одной строкой и живут в других местах. Здесь полный перечень, тот
+     * самый, который человек видит перед оплатой, — и он один на сайт и
+     * приложение, чтобы обещание было одно.
+     */
+    features: {
+      standard: string[]
+      vip: string[]
+      premium: string[]
+    }
   }
   /**
    * Покупка тарифа в приложении через магазин.
@@ -404,6 +417,26 @@ export interface Translations {
     pendingFound: string
     /** Содержит {date}. */
     activeUntil: string
+    /** Подписи ступеней: повысить — с обычного, продлить — с действующего. */
+    upgradeVip: string
+    upgradePremium: string
+    extendVip: string
+    extendPremium: string
+    planBenefits: string
+    /** Тариф не куплен или истёк. */
+    currentStandard: string
+    /** Продление: дни прибавляются к остатку. */
+    addDaysNote: string
+    /** Переход с VIP на Premium: остаток VIP не переносится. */
+    replaceNote: string
+    /** Почему Premium-объявлению не предлагают VIP. */
+    vipNotOffered: string
+    doneVip: string
+    donePremium: string
+    /** Содержит {date}. */
+    doneUntil: string
+    backToListing: string
+    selected: string
   }
   validation: {
     emailInvalid: string
