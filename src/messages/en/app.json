@@ -62,6 +62,8 @@
       "book": "Book Now",
       "gallery": "Gallery",
       "address": "Address",
+      "openInMaps": "Get directions",
+      "otherMapApp": "Other app",
       "area": "Area",
       "sqm": "m²",
       "bookingRequest": "Send Request",

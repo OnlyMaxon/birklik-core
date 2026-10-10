@@ -67,6 +67,10 @@ export interface Translations {
     book: string
     gallery: string
     address: string
+    /** Шапка окна метки на карте объявления. */
+    openInMaps: string
+    /** Третья кнопка маршрута на Android: системный выбор приложения карт. */
+    otherMapApp: string
     area: string
     sqm: string
     bookingRequest: string

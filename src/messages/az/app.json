@@ -62,6 +62,8 @@
       "book": "Sifariş et",
       "gallery": "Qalereya",
       "address": "Ünvan",
+      "openInMaps": "Marşrut qur",
+      "otherMapApp": "Başqa tətbiq",
       "area": "Sahə",
       "sqm": "m²",
       "bookingRequest": "Sorğu göndər",
