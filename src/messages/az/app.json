@@ -356,7 +356,27 @@
       "premiumDisplays": "Bütün funksiyaları olan peşəkar paket",
       "selectDuration": "Müddət seçin",
       "plans": "paket planlar",
-      "storeCharge": "Google Play tutacaq"
+      "storeCharge": "Google Play tutacaq",
+      "features": {
+        "standard": [
+          "20 foto",
+          "Tam təsvir",
+          "Açıq lokasiya"
+        ],
+        "vip": [
+          "Elana VIP nişanı",
+          "20 fotoya qədər",
+          "Açıq lokasiya",
+          "Elan VIP bölməsində və sizin ərazi üzrə axtarış nəticələrində təsadüfi qaydada ön sıralarda göstəriləcək"
+        ],
+        "premium": [
+          "Tam təsvir",
+          "30 fotoya qədər",
+          "Açıq lokasiya",
+          "Prioritetli Elan əsas səhifədə (rekomendasiyalarda) göstəriləcək",
+          "Sizin ərazi üzrə axtarış nəticələrində təsadüfi qaydada ön sıralarda göstəriləcək"
+        ]
+      }
     },
     "promote": {
       "title": "Elanı irəli çək",
@@ -367,7 +387,21 @@
       "failed": "Satınalma tamamlanmadı. Məbləğ çıxılıbsa, Google onu avtomatik qaytaracaq.",
       "unavailable": "Mağaza əlçatan deyil. Bir az sonra yenidən yoxlayın.",
       "pendingFound": "Tamamlanmamış satınalma tapıldı — yoxlanılır.",
-      "activeUntil": "Hazırda {date} tarixinə qədər aktivdir"
+      "activeUntil": "Hazırda {date} tarixinə qədər aktivdir",
+      "upgradeVip": "VIP-ə yüksəlt",
+      "upgradePremium": "Premium-a yüksəlt",
+      "extendVip": "VIP-i uzat",
+      "extendPremium": "Premium-u uzat",
+      "planBenefits": "Paket nə verir",
+      "currentStandard": "Hazırda adi elandır",
+      "addDaysNote": "Günlər qalan müddətin üstünə əlavə olunur — ödənilmiş vaxt itmir.",
+      "replaceNote": "Premium VIP-i əvəz edir: VIP-in qalan günləri keçmir.",
+      "vipNotOffered": "Burada VIP təklif olunmur: o, Premium-u əvəz edər və qalan günlər itərdi.",
+      "doneVip": "Elan artıq VIP-dir",
+      "donePremium": "Elan artıq Premium-dur",
+      "doneUntil": "{date} tarixinədək qüvvədədir",
+      "backToListing": "Elana qayıt",
+      "selected": "Seçildi"
     },
     "validation": {
       "emailInvalid": "Etibarlı email ünvanı daxil edin",

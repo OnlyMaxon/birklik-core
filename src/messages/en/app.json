@@ -356,7 +356,27 @@
       "premiumFeatures": "✓ Premium badge, top placement, 30 photos",
       "vipDisplays": "Top 3 week visibility",
       "premiumDisplays": "Professional tier with all features",
-      "storeCharge": "Google Play charges"
+      "storeCharge": "Google Play charges",
+      "features": {
+        "standard": [
+          "20 photos",
+          "Full description",
+          "Open location"
+        ],
+        "vip": [
+          "VIP badge on listing",
+          "Up to 20 photos",
+          "Open location",
+          "The ad will be randomly displayed at the top of the VIP section and search results in your area"
+        ],
+        "premium": [
+          "Full description",
+          "Up to 30 photos",
+          "Open location",
+          "Priority Ad will be shown on the home page (recommendations)",
+          "The ad will be randomly displayed at the top of the search results in your area"
+        ]
+      }
     },
     "promote": {
       "title": "Promote listing",
@@ -367,7 +387,21 @@
       "failed": "Could not complete the purchase. If you were charged, Google will refund it automatically.",
       "unavailable": "The store is unavailable. Please try again later.",
       "pendingFound": "An unfinished purchase was found — verifying it.",
-      "activeUntil": "Currently active until {date}"
+      "activeUntil": "Currently active until {date}",
+      "upgradeVip": "Upgrade to VIP",
+      "upgradePremium": "Upgrade to Premium",
+      "extendVip": "Extend VIP",
+      "extendPremium": "Extend Premium",
+      "planBenefits": "What the plan gives",
+      "currentStandard": "Currently a regular listing",
+      "addDaysNote": "Days are added to the time left — paid time is not lost.",
+      "replaceNote": "Premium replaces VIP: remaining VIP days do not carry over.",
+      "vipNotOffered": "VIP is not offered here: it would replace Premium and the remaining days would be lost.",
+      "doneVip": "The listing is now VIP",
+      "donePremium": "The listing is now Premium",
+      "doneUntil": "Active until {date}",
+      "backToListing": "Back to the listing",
+      "selected": "Selected"
     },
     "validation": {
       "emailInvalid": "Enter a valid email address",

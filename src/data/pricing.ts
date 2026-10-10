@@ -46,3 +46,29 @@ export function tierPriceByDays(tier: PaidTier, days: number): number | undefine
 export function formatAzn(amount: number): string {
   return `${amount} ₼`
 }
+
+/**
+ * Сколько снимков разрешено тарифу.
+ *
+ * ⚠️ До 2026-10-10 эти числа жили только на сайте — литералами `20` и `30` в
+ * `use-listing-editor.ts`. Приложение о них не знало и держало свои 15 на все
+ * тарифы, да ещё и **молча отрезало** лишние: человек платил за Premium,
+ * прикладывал тридцать снимков и получал пятнадцать без единого слова. Отсюда
+ * правило: число живёт здесь, оба приложения спрашивают.
+ *
+ * Бесплатным тарифам (`free`, `standard`) положено столько же, сколько VIP, —
+ * платное отличается не количеством снимков, а местом в выдаче и значком.
+ * Лишнее место у Premium — единственное исключение.
+ */
+export const TIER_PHOTO_LIMITS = {standard: 20, vip: 20, premium: 30} as const
+
+/**
+ * Предел снимков для тарифа. Неизвестный тариф получает обычный предел:
+ * ошибаться надо в сторону меньшего, иначе человек приложит тридцать снимков и
+ * упрётся в отказ уже при сохранении.
+ */
+export function photoLimitForTier(tier: string | undefined): number {
+  if (tier === 'premium') return TIER_PHOTO_LIMITS.premium
+  if (tier === 'vip') return TIER_PHOTO_LIMITS.vip
+  return TIER_PHOTO_LIMITS.standard
+}
