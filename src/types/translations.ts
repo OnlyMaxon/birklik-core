@@ -267,8 +267,6 @@ export interface Translations {
     more: string
     enterAddressForSearch: string
     addressNotFound: string
-    addressPickFound: string
-    addressConfirmOnMap: string
     invalidCoordinates: string
     locationSearchFailed: string
     signInToAddListing: string
