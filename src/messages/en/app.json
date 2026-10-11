@@ -251,6 +251,8 @@
       "more": "More",
       "enterAddressForSearch": "Enter address for search",
       "addressNotFound": "Address not found. Try a more specific address",
+      "addressPickFound": "Pick your address from the matches",
+      "addressConfirmOnMap": "Check the marker — drag it on the map if it is off",
       "invalidCoordinates": "Invalid coordinates received",
       "locationSearchFailed": "Location search failed. Try again",
       "signInToAddListing": "Please sign in to add a listing",

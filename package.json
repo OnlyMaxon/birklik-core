@@ -14,6 +14,7 @@
     "./utils/display": "./src/utils/display.ts",
     "./utils/auth-errors": "./src/utils/auth-errors.ts",
     "./utils/basemap": "./src/utils/basemap.ts",
+    "./utils/geocode": "./src/utils/geocode.ts",
     "./utils/images": "./src/utils/images.ts"
   },
   "scripts": {

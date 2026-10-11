@@ -251,6 +251,8 @@
       "more": "Daha çox",
       "enterAddressForSearch": "Axtarış üçün ünvan daxil edin",
       "addressNotFound": "Ünvan tapılmadı. Daha dəqiq ünvan yazın",
+      "addressPickFound": "Tapılan ünvanlardan özünüzü seçin",
+      "addressConfirmOnMap": "Nişanı yoxlayın: lazım gəlsə, xəritədə düzgün yerə çəkin",
       "invalidCoordinates": "Koordinatlar düzgün qeyd edilmədi",
       "locationSearchFailed": "Ünvan axtarışı uğursuz oldu. Yenidən cəhd edin",
       "signInToAddListing": "Elan əlavə etmək üçün giriş edin",
