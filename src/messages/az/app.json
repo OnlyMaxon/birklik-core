@@ -405,6 +405,23 @@
       "backToListing": "Elana qayıt",
       "selected": "Seçildi"
     },
+    "boost": {
+      "button": "İrəli çək",
+      "title": "Elanı irəli çək",
+      "subtitle": "Elanınız adi elanların ən başına qalxır. VIP və Premium elanlardan yuxarı qalxmır.",
+      "packageOne": "1 dəfə",
+      "packageMany": "{count} dəfə",
+      "perDay": "gündə bir dəfə, {count} gün",
+      "oneDay": "bir gün ən başda",
+      "remaining": "Qalıq: {count} irəli çəkmə",
+      "nextAt": "Növbəti irəli çəkmə: {date}",
+      "activeNow": "Elan indi adi elanların başındadır",
+      "done": "Elan irəli çəkildi",
+      "doneOne": "Elanınız adi elanların ən başındadır. Bir gün belə qalacaq.",
+      "doneMany": "Elanınız ən başdadır. Qalan {count} irəli çəkmə hər gün bir dəfə işləyəcək.",
+      "notForPaid": "VIP və Premium elanlar artıq bütün adi elanlardan yuxarıdadır — irəli çəkməyə ehtiyac yoxdur.",
+      "addNote": "Yeni irəli çəkmələr qalana əlavə olunur — ödənilən itmir."
+    },
     "validation": {
       "emailInvalid": "Etibarlı email ünvanı daxil edin",
       "phoneRequired": "Telefon nömrəsi daxil edin",

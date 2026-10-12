@@ -405,6 +405,23 @@
       "backToListing": "Back to the listing",
       "selected": "Selected"
     },
+    "boost": {
+      "button": "Boost",
+      "title": "Boost listing",
+      "subtitle": "Your listing moves to the top of the standard ones. It never rises above VIP or Premium.",
+      "packageOne": "1 boost",
+      "packageMany": "{count} boosts",
+      "perDay": "one a day for {count} days",
+      "oneDay": "one day at the top",
+      "remaining": "Boosts left: {count}",
+      "nextAt": "Next boost: {date}",
+      "activeNow": "Listing is at the top of the standard ones",
+      "done": "Listing boosted",
+      "doneOne": "Your listing is at the top of the standard ones for one day.",
+      "doneMany": "Your listing is at the top. The remaining {count} boosts run one a day.",
+      "notForPaid": "VIP and Premium already rank above every standard listing — boosting adds nothing.",
+      "addNote": "New boosts are added to the ones you have left — nothing paid for is lost."
+    },
     "validation": {
       "emailInvalid": "Enter a valid email address",
       "phoneRequired": "Phone number is required",

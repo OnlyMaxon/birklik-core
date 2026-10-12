@@ -442,6 +442,38 @@ export interface Translations {
     backToListing: string
     selected: string
   }
+  /**
+   * Подъём объявления в выдаче. Отдельно от `promote`: там платные ступени —
+   * VIP и Premium, — а подъём полосу не меняет и продаётся сам по себе.
+   */
+  boost: {
+    /** Подпись кнопки на странице объявления. */
+    button: string
+    title: string
+    subtitle: string
+    /** Пакет на один подъём — без числа, иначе «1 раз» звучит как «1 разов». */
+    packageOne: string
+    /** Содержит {count}. */
+    packageMany: string
+    /** Что получает покупатель пакета. Содержит {count}. */
+    perDay: string
+    /** То же про одиночный подъём. */
+    oneDay: string
+    /** Содержит {count}. */
+    remaining: string
+    /** Содержит {date}. */
+    nextAt: string
+    /** Подъём действует прямо сейчас. */
+    activeNow: string
+    done: string
+    doneOne: string
+    /** Содержит {count}. */
+    doneMany: string
+    /** Почему подъём не предлагают VIP и Premium. */
+    notForPaid: string
+    /** Повторная покупка прибавляет подъёмы к остатку. */
+    addNote: string
+  }
   validation: {
     emailInvalid: string
     phoneRequired: string

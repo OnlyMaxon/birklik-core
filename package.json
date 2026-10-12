@@ -9,6 +9,7 @@
     "./types": "./src/types/index.ts",
     "./data": "./src/data/index.ts",
     "./utils/premium-helper": "./src/utils/premium-helper.ts",
+    "./utils/boost-helper": "./src/utils/boost-helper.ts",
     "./utils/validators": "./src/utils/validators.ts",
     "./messages/*": "./src/messages/*",
     "./utils/display": "./src/utils/display.ts",

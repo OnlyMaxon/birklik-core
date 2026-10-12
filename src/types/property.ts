@@ -127,6 +127,19 @@ export interface Property {
   premiumExpiresAt?: string // ISO date when premium status expires
   vipExpiresAt?: string // ISO date when VIP status expires
   tierPlanDuration?: '14days' | '30days' // Selected plan duration for current tier
+  /**
+   * Момент последнего подъёма объявления, ISO.
+   *
+   * Пишет ТОЛЬКО сервер — правила Firestore держат это поле в списке
+   * запрещённых владельцу наравне с `listingTier` и датами тарифов. Иначе
+   * подъём делался бы из браузера бесплатно.
+   *
+   * Поля нет у объявления, которое не поднимали ни разу, и переносить сюда
+   * `createdAt` для «ровности» НЕЛЬЗЯ: выборка поднятых отбирает их по наличию
+   * этой даты, а `isBoostActive` считает по ней срок. Что значит отсутствие и
+   * как сравнивается порядок — в `utils/boost-helper.ts`.
+   */
+  boostedAt?: string
   expiredAt?: string // ISO date when listing was deactivated due to expired premium/VIP
 }
 

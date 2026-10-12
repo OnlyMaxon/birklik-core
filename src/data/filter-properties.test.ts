@@ -140,3 +140,74 @@ describe('filterProperties: поиск по названию места', () => 
     expect(filterProperties([baku, gabala], { search: '—' })).toHaveLength(2)
   })
 })
+
+// Порядок выдачи. Проверяется здесь, а не в `boost-helper.test.ts`: там правило
+// поднятия само по себе, а тут — как оно складывается с тарифом. Перепутать эти
+// два сравнения местами значит отдать верх выдачи за два маната вместо
+// пятидесяти пяти, и никакая проверка типов такого не поймает.
+describe('filterProperties ordering', () => {
+  const at = (hours: number) => new Date(Date.now() - hours * 3600000).toISOString()
+  const inDays = (days: number) => new Date(Date.now() + days * 86400000).toISOString()
+
+  const listing = (id: string, extra: Partial<Property>): Property => ({
+    ...baseProperty,
+    id,
+    createdAt: at(100),
+    ...extra
+  })
+
+  it('ставит поднятое наверх обычных', () => {
+    const result = filterProperties(
+      [
+        listing('fresh', {createdAt: at(1)}),
+        listing('boosted-old', {createdAt: at(1000), boostedAt: at(2)})
+      ],
+      {}
+    )
+    expect(result.map(p => p.id)).toEqual(['boosted-old', 'fresh'])
+  })
+
+  it('НЕ выводит поднятое выше VIP и Premium', () => {
+    // Главное правило подъёма. Нарушь его — и поднятое за два маната обычное
+    // объявление встанет выше оплаченного Premium.
+    const result = filterProperties(
+      [
+        listing('boosted', {createdAt: at(1), boostedAt: at(0.5)}),
+        listing('vip', {listingTier: 'vip', vipExpiresAt: inDays(5), createdAt: at(500)}),
+        listing('premium', {listingTier: 'premium', premiumExpiresAt: inDays(5), createdAt: at(900)})
+      ],
+      {}
+    )
+    expect(result.map(p => p.id)).toEqual(['premium', 'vip', 'boosted'])
+  })
+
+  it('сравнивает поднятые между собой по свежести подъёма', () => {
+    const result = filterProperties(
+      [
+        listing('boosted-earlier', {boostedAt: at(5)}),
+        listing('boosted-later', {boostedAt: at(1)})
+      ],
+      {}
+    )
+    expect(result.map(p => p.id)).toEqual(['boosted-later', 'boosted-earlier'])
+  })
+
+  it('возвращает объявление на место по дате, когда подъём выдохся', () => {
+    const result = filterProperties(
+      [
+        listing('expired-boost', {createdAt: at(1000), boostedAt: at(30)}),
+        listing('plain', {createdAt: at(10)})
+      ],
+      {}
+    )
+    expect(result.map(p => p.id)).toEqual(['plain', 'expired-boost'])
+  })
+
+  it('держит обычный порядок по дате, когда подъёмов нет ни у кого', () => {
+    const result = filterProperties(
+      [listing('older', {createdAt: at(50)}), listing('newer', {createdAt: at(5)})],
+      {}
+    )
+    expect(result.map(p => p.id)).toEqual(['newer', 'older'])
+  })
+})

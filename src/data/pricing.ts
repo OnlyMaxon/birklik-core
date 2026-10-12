@@ -72,3 +72,45 @@ export function photoLimitForTier(tier: string | undefined): number {
   if (tier === 'vip') return TIER_PHOTO_LIMITS.vip
   return TIER_PHOTO_LIMITS.standard
 }
+
+/**
+ * Сколько раз поднимаем объявление за один платёж.
+ *
+ * Числа — они же в именах товаров магазина (`boost_1`, `boost_3`, …) и в
+ * `BOOST_PRODUCTS` на сервере. Разойдутся — Google спишет деньги за товар,
+ * которого мы не узнаём.
+ */
+export type BoostPackage = 1 | 3 | 5 | 10
+
+/** Пакеты в том порядке, в каком их показывают человеку. */
+export const BOOST_PACKAGES: readonly BoostPackage[] = [1, 3, 5, 10]
+
+/**
+ * Цены подъёма в манатах — **единственный источник для сайта и приложения**.
+ *
+ * ⚠️ Копия этих же чисел лежит в `firebase-functions/src/payment/azericard.ts`,
+ * и по ней банк берёт настоящие деньги. Причина та же, что у `TIER_PRICES`:
+ * функции собираются отдельным пакетом и подмодуль `core` в сборку не тянут.
+ * **Меняя цену, править оба места.**
+ *
+ * Скидка растёт с объёмом намеренно: 2.00 / 1.67 / 1.60 / 1.50 маната за
+ * подъём. Одиночный обязан быть самым дорогим за штуку, иначе пакеты теряют
+ * смысл — три покупки по одному вышли бы дешевле пакета на три.
+ */
+export const BOOST_PRICES: Record<BoostPackage, number> = {1: 2, 3: 5, 5: 8, 10: 15}
+
+/** Цена пакета, или `undefined` у неизвестного числа подъёмов. */
+export function boostPrice(count: number): number | undefined {
+  return isBoostPackage(count) ? BOOST_PRICES[count] : undefined
+}
+
+/**
+ * Проверка числа на принадлежность пакетам.
+ *
+ * Нужна на каждой границе, где число пришло извне: из формы, из имени товара
+ * магазина, из записи о платеже. Пакета «7 подъёмов» не существует, и платёж с
+ * таким числом — это либо опечатка в Play Console, либо подделка.
+ */
+export function isBoostPackage(value: unknown): value is BoostPackage {
+  return value === 1 || value === 3 || value === 5 || value === 10
+}

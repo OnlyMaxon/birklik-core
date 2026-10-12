@@ -3,6 +3,7 @@
 export * from './types'
 export * from './data'
 export * from './utils/premium-helper'
+export * from './utils/boost-helper'
 export * from './utils/validators'
 export * from './utils/display'
 export * from './utils/auth-errors'
