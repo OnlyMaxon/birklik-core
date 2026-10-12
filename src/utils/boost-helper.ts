@@ -1,3 +1,6 @@
+import type {ListingTier} from '../types'
+import {tierRank} from './premium-helper'
+
 /**
  * Подъём объявления в выдаче: единственное место, где решается «поднято ли оно
  * прямо сейчас» и каким временем его сравнивать с соседями.
@@ -26,6 +29,13 @@ interface BoostedListing {
   /** Момент последнего подъёма, ISO. Ставит только сервер. */
   boostedAt?: string
   createdAt?: string
+}
+
+/** Всё, что нужно знать об объявлении, чтобы поставить его в выдаче. */
+export interface ComparableListing extends BoostedListing {
+  listingTier?: ListingTier
+  premiumExpiresAt?: string
+  vipExpiresAt?: string
 }
 
 /** Момент в миллисекундах или `null`, если даты нет или она не разбирается. */
@@ -70,4 +80,31 @@ export function boostRank(listing: BoostedListing, now: number = Date.now()): nu
 export function listingSortTime(listing: BoostedListing, now: number = Date.now()): number {
   if (isBoostActive(listing, now)) return timestamp(listing.boostedAt) ?? 0
   return timestamp(listing.createdAt) ?? 0
+}
+
+/**
+ * Порядок двух объявлений в выдаче — **единственное место, где он решается**.
+ *
+ * ```
+ * 1. вес тарифа      Premium выше VIP, VIP выше обычного, истёкший как обычный
+ * 2. подъём          поднятое выше неподнятого ВНУТРИ своей полосы
+ * 3. время           у поднятого момент подъёма, у остальных дата создания
+ * ```
+ *
+ * Вынесено отдельной функцией не ради красоты. Копий этого сравнения было две:
+ * в `filterProperties` и в `getCityProperties` на страницах регионов, — и
+ * вторая отставала от первой. Разойдясь ещё раз, они дадут то, что уже было:
+ * на главной оплаченное место работает, а на странице региона, куда ведёт
+ * длинный хвост поисковых запросов, — нет.
+ *
+ * ⚠️ Порядок шагов — это цена. Переставь подъём выше тарифа, и поднятое за два
+ * маната обычное объявление встанет выше оплаченного за пятьдесят пять
+ * Premium. Проверка типов такого не поймает: оба шага возвращают число.
+ */
+export function compareListings(a: ComparableListing, b: ComparableListing): number {
+  const rankDiff = tierRank(b) - tierRank(a)
+  if (rankDiff !== 0) return rankDiff
+  const boostDiff = boostRank(b) - boostRank(a)
+  if (boostDiff !== 0) return boostDiff
+  return listingSortTime(b) - listingSortTime(a)
 }

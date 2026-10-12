@@ -1,6 +1,5 @@
 import { Property, PropertyType, Amenity, LocationCategory } from '../types'
-import { tierRank } from '../utils/premium-helper'
-import { boostRank, listingSortTime } from '../utils/boost-helper'
+import { compareListings } from '../utils/boost-helper'
 import { expandSearchTerms, resolveCity } from './city-aliases'
 import { foldPlace, placeMatches, placeMatchScore } from './place-match'
 
@@ -632,18 +631,8 @@ export const filterProperties = (
     }
 
     return true
-  }).sort((a, b) => {
-    // Вес тарифа считает общий помощник. Прежняя копия сравнивала даты строками
-    // с полным ISO — из-за этого последний оплаченный день пропадал ещё утром, —
-    // а VIP без даты держала наверху бессрочно.
-    const rankDiff = tierRank(b) - tierRank(a)
-    if (rankDiff !== 0) return rankDiff
-    // Подъём разбирает порядок ВНУТРИ полосы и наружу её не выводит: поднятое
-    // стандартное встаёт наверх стандартных, но ни VIP, ни Premium не обгоняет —
-    // тариф сравнивается раньше и сильнее.
-    const boostDiff = boostRank(b) - boostRank(a)
-    if (boostDiff !== 0) return boostDiff
-    // Поднятые сравниваются моментом подъёма, остальные — датой создания.
-    return listingSortTime(b) - listingSortTime(a)
-  })
+    // Порядок считает `compareListings` — тариф, затем подъём, затем время.
+    // Своей копии здесь больше нет: ровно эта копия и разъехалась со страницами
+    // регионов, где сортировка по тарифу когда-то отсутствовала вовсе.
+  }).sort(compareListings)
 }
