@@ -448,8 +448,7 @@
       "stepLocation": "Ищем место на карте",
       "stepPhotos": "Загружаем фото: {done} из {total}",
       "stepSaving": "Сохраняем объявление",
-      "stepPayment": "Открываем оплату",
-      "stepDone": "Готово"
+      "stepPayment": "Открываем оплату"
     },
     "validation": {
       "emailInvalid": "Введите корректный email",

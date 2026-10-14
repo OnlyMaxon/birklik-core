@@ -448,8 +448,7 @@
       "stepLocation": "Finding the spot on the map",
       "stepPhotos": "Uploading photos: {done} of {total}",
       "stepSaving": "Saving the listing",
-      "stepPayment": "Opening the payment",
-      "stepDone": "Done"
+      "stepPayment": "Opening the payment"
     },
     "validation": {
       "emailInvalid": "Enter a valid email address",

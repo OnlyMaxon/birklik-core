@@ -520,8 +520,11 @@ export interface Translations {
     /** Содержит {done} и {total}. */
     stepPhotos: string
     stepSaving: string
+    /**
+     * Пока открывается окно магазина. Дальше, на проверке чека, подпись берётся
+     * из `promote.checking` — это та же проверка, и своего текста ей не надо.
+     */
     stepPayment: string
-    stepDone: string
   }
   validation: {
     emailInvalid: string

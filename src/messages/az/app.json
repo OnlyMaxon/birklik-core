@@ -448,8 +448,7 @@
       "stepLocation": "Xəritədə yer tapırıq",
       "stepPhotos": "Fotolar yüklənir: {total} şəkildən {done}",
       "stepSaving": "Elan yadda saxlanılır",
-      "stepPayment": "Ödəniş açılır",
-      "stepDone": "Hazırdır"
+      "stepPayment": "Ödəniş açılır"
     },
     "validation": {
       "emailInvalid": "Etibarlı email ünvanı daxil edin",
