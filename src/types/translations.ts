@@ -473,6 +473,55 @@ export interface Translations {
     notForPaid: string
     /** Повторная покупка прибавляет подъёмы к остатку. */
     addNote: string
+    /** Заголовок схемы полос: Premium, VIP, обычные. */
+    bandsTitle: string
+    /** Подпись объявления покупателя на схеме. */
+    bandYours: string
+    /** Подпись остальных обычных объявлений на схеме. */
+    bandOther: string
+    howTitle: string
+    how1: string
+    how2: string
+    how3: string
+    pickTitle: string
+    /** Цена одного подъёма в пакете. Содержит {price}. */
+    perBoost: string
+    /** Метка самого выгодного пакета. */
+    best: string
+    /**
+     * Почему подъём недоступен снятому с витрины объявлению. Сервер отказывает
+     * такому платежу до списания денег (`initiatePayment`), и экран обязан
+     * сказать то же самое заранее.
+     */
+    notOnDisplay: string
+  }
+  /**
+   * Универсальное окно итога: что случилось после действия, которое могло не
+   * получиться. Отдельно от `messages`: там короткие строки для подсказок, а
+   * здесь заголовок, объяснение и выход на поддержку.
+   *
+   * Шаги (`step*`) — подписи к полосе загрузки при подаче объявления. Они
+   * настоящие: показывается то, что происходит в эту секунду, а не бегунок
+   * ради вида.
+   */
+  dialog: {
+    moderationTitle: string
+    moderationBody: string
+    moderationNote: string
+    errorTitle: string
+    errorBody: string
+    errorNote: string
+    retry: string
+    supportTitle: string
+    supportCall: string
+    supportMail: string
+    toListings: string
+    stepLocation: string
+    /** Содержит {done} и {total}. */
+    stepPhotos: string
+    stepSaving: string
+    stepPayment: string
+    stepDone: string
   }
   validation: {
     emailInvalid: string
