@@ -567,6 +567,11 @@ export interface Translations {
     ctaSubtitle: string
   }
   errors: {
+    /**
+     * Отказ действием заблокированному. Короткий: подробности и причина лежат
+     * в полосе кабинета (`blocked`), а это — текст всплывающего сообщения.
+     */
+    blocked: string
     addressForSearch: string
     addressNotFound: string
     invalidCoordinates: string
@@ -775,6 +780,44 @@ export interface Translations {
     sortOldest: string
     /** Единица для кнопок быстрого продления тарифа: «+14 дней». */
     renewDays: string
+    /**
+     * Блокировка человека модератором — кнопки и окно подтверждения.
+     *
+     * Лежит в `moderation`, а не рядом с текстами для самого заблокированного
+     * (раздел `blocked`): это видит модератор, а то — человек. Разные читатели
+     * и разный тон.
+     */
+    blockUser: string
+    unblockUser: string
+    blockedBadge: string
+    blockTitle: string
+    blockReason: string
+    blockReasonPlaceholder: string
+    /** Что именно произойдёт. Модератор обязан это прочитать до нажатия. */
+    blockReasonHint: string
+    confirmBlock: string
+    unblockTitle: string
+    /** ⚠️ Обещает вернуть только снятое блокировкой — так и работает. */
+    unblockHint: string
+    confirmUnblock: string
+    blockFailed: string
+    blockedSince: string
+    blockedByLabel: string
+    /** Метка в списке объявлений: это снято блокировкой, а не владельцем. */
+    hiddenByBlockBadge: string
+  }
+  /**
+   * Что видит сам заблокированный человек — полоса в кабинете.
+   *
+   * Отдельным разделом верхнего уровня, а не внутри `dashboard`: полоса нужна
+   * и на сайте, и в приложении, и показывается она не только в кабинете.
+   */
+  blocked: {
+    title: string
+    body: string
+    reasonLabel: string
+    listingsHidden: string
+    contact: string
   }
   calendar: {
     days: {

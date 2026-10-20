@@ -484,6 +484,7 @@
       "ctaSubtitle": "List your home today and start receiving bookings."
     },
     "errors": {
+      "blocked": "Action unavailable: your access has been restricted by a moderator. Details are in your account.",
       "addressForSearch": "Enter address for search",
       "addressNotFound": "Address not found. Try a more specific address",
       "invalidCoordinates": "Invalid coordinates received",
@@ -687,7 +688,29 @@
       "filterDrafts": "Drafts",
       "sortNewest": "Newest",
       "sortOldest": "Oldest",
-      "renewDays": "days"
+      "renewDays": "days",
+      "blockUser": "Block",
+      "unblockUser": "Unblock",
+      "blockedBadge": "Blocked",
+      "blockTitle": "Block this person",
+      "blockReason": "Reason for blocking",
+      "blockReasonPlaceholder": "Describe the reason — the person will see it...",
+      "blockReasonHint": "They will still be able to sign in and browse, but not post listings, comment, rate or book. Their listings leave the storefront and come back when the block is lifted. They will see the reason in their account.",
+      "confirmBlock": "Block",
+      "unblockTitle": "Unblock this person",
+      "unblockHint": "The restriction is lifted. Only listings hidden by the block return to the storefront — anything the person hid themselves stays hidden.",
+      "confirmUnblock": "Unblock",
+      "blockFailed": "Could not change the block",
+      "blockedSince": "Blocked",
+      "blockedByLabel": "Blocked by",
+      "hiddenByBlockBadge": "Hidden by block"
+    },
+    "blocked": {
+      "title": "Access restricted",
+      "body": "A moderator has restricted your access. You can sign in and browse listings, but you cannot post, comment, rate or book.",
+      "reasonLabel": "Reason",
+      "listingsHidden": "Your listings have been removed from the storefront until the restriction is lifted.",
+      "contact": "If this is a mistake, please contact us:"
     },
     "calendar": {
       "days": {

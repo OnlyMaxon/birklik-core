@@ -484,6 +484,7 @@
       "ctaSubtitle": "Evinizi bu gün elan edin və rezervasiya qəbul etməyə başlayın."
     },
     "errors": {
+      "blocked": "Əməliyyat mümkün deyil: girişiniz moderator tərəfindən məhdudlaşdırılıb. Təfərrüatlar kabinetdədir.",
       "addressForSearch": "Axtarış üçün ünvan daxil edin",
       "addressNotFound": "Ünvan tapılmadı. Daha spesifik ünvan daxil edin",
       "invalidCoordinates": "Yanlış koordinatlar alındı",
@@ -687,7 +688,29 @@
       "filterDrafts": "Qaralamalar",
       "sortNewest": "Yeni",
       "sortOldest": "Köhnə",
-      "renewDays": "gün"
+      "renewDays": "gün",
+      "blockUser": "Bloklamaq",
+      "unblockUser": "Bloku açmaq",
+      "blockedBadge": "Bloklanmış",
+      "blockTitle": "İstifadəçini bloklamaq",
+      "blockReason": "Bloklama səbəbi",
+      "blockReasonPlaceholder": "Səbəbi yazın — istifadəçi onu görəcək...",
+      "blockReasonHint": "İstifadəçi daxil olub baxa biləcək, lakin elan yerləşdirə, şərh yaza, qiymətləndirə və rezervasiya edə bilməyəcək. Elanları vitrindən çıxarılacaq və blok açıldıqda geri qaytarılacaq. Səbəbi öz kabinetində görəcək.",
+      "confirmBlock": "Bloklamaq",
+      "unblockTitle": "İstifadəçinin blokunu açmaq",
+      "unblockHint": "Məhdudiyyət götürüləcək. Vitrinə yalnız bloklama ilə çıxarılan elanlar qayıdacaq — istifadəçinin özü gizlətdikləri gizli qalacaq.",
+      "confirmUnblock": "Bloku açmaq",
+      "blockFailed": "Bloklama dəyişdirilə bilmədi",
+      "blockedSince": "Bloklanıb",
+      "blockedByLabel": "Bloklayan",
+      "hiddenByBlockBadge": "Bloklama ilə çıxarılıb"
+    },
+    "blocked": {
+      "title": "Giriş məhdudlaşdırılıb",
+      "body": "Moderator girişinizi məhdudlaşdırdı. Daxil olub elanlara baxa bilərsiniz, lakin elan yerləşdirə, şərh yaza, qiymətləndirə və rezervasiya edə bilmərsiniz.",
+      "reasonLabel": "Səbəb",
+      "listingsHidden": "Elanlarınız məhdudiyyət götürülənə qədər vitrindən çıxarılıb.",
+      "contact": "Bu səhvdir deyə düşünürsünüzsə, bizimlə əlaqə saxlayın:"
     },
     "calendar": {
       "days": {
