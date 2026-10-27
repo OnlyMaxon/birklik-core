@@ -360,7 +360,7 @@
       "premiumDisplays": "Bütün funksiyaları olan peşəkar paket",
       "selectDuration": "Müddət seçin",
       "plans": "paket planlar",
-      "storeCharge": "Google Play tutacaq",
+      "storeCharge": "{store} tutacaq",
       "features": {
         "standard": [
           "20 foto",
@@ -384,7 +384,7 @@
     },
     "promote": {
       "title": "Elanı irəli çək",
-      "subtitle": "Paket və müddət seçin. Ödəniş Google Play vasitəsilə keçir.",
+      "subtitle": "Paket və müddət seçin. Ödəniş {store} vasitəsilə keçir.",
       "buy": "Al",
       "checking": "Ödəniş yoxlanılır…",
       "success": "Paket {date} tarixinə qədər aktivdir",

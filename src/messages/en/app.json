@@ -360,7 +360,7 @@
       "premiumFeatures": "✓ Premium badge, top placement, 30 photos",
       "vipDisplays": "Top 3 week visibility",
       "premiumDisplays": "Professional tier with all features",
-      "storeCharge": "Google Play charges",
+      "storeCharge": "{store} charges",
       "features": {
         "standard": [
           "20 photos",
@@ -384,7 +384,7 @@
     },
     "promote": {
       "title": "Promote listing",
-      "subtitle": "Choose a plan and duration. Payment goes through Google Play.",
+      "subtitle": "Choose a plan and duration. Payment goes through {store}.",
       "buy": "Buy",
       "checking": "Verifying payment…",
       "success": "Plan active until {date}",
