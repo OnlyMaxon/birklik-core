@@ -388,7 +388,7 @@
       "buy": "Buy",
       "checking": "Verifying payment…",
       "success": "Plan active until {date}",
-      "failed": "Could not complete the purchase. If you were charged, Google will refund it automatically.",
+      "failed": "Could not complete the purchase. If you were charged, {store} will refund it automatically.",
       "unavailable": "The store is unavailable. Please try again later.",
       "pendingFound": "An unfinished purchase was found — verifying it.",
       "activeUntil": "Currently active until {date}",
