@@ -813,6 +813,64 @@ export interface Translations {
     blockedByLabel: string
     /** Метка в списке объявлений: это снято блокировкой, а не владельцем. */
     hiddenByBlockBadge: string
+    /**
+     * Поиск в разделе «Люди».
+     *
+     * ⚠️ Заведён потому, что приложение показывало здесь `search.placeholder` —
+     * подпись от поиска ЖИЛЬЯ: «Введите местность, район или адрес». Над
+     * списком людей это читается как поломка, и владелец так её и прочитал
+     * 2026-11-12.
+     */
+    searchPeople: string
+    /**
+     * Что делать, когда список пуст.
+     *
+     * Пустота в «Людях» — норма, а не сбой: без запроса показываются только
+     * заблокированные, и обычно их ноль. Пустой экран об этом молчал.
+     */
+    peopleHint: string
+    peopleNoneBlocked: string
+    /**
+     * Выборка раздела не удалась.
+     *
+     * ⚠️ До 2026-11-12 отказ любой из шести выборок модераторки глотался
+     * молча (`Promise.allSettled` без разбора причин), и «нет права читать»
+     * выглядело точно так же, как «ничего нет».
+     */
+    loadFailed: string
+    /**
+     * Выручка площадки по месяцам — вкладка модераторки.
+     *
+     * Считает её сервер по журналу платежей, в коллекцию `revenue/{YYYY-MM}`.
+     * Подписи общие для сайта и приложения: вкладка одинаковая в обоих.
+     */
+    revenueTab: string
+    revenueTotal: string
+    revenuePurchases: string
+    revenueByStore: string
+    revenueByProduct: string
+    /** Названия касс. «Карта на сайте» — это Azericard, но так его зовут люди. */
+    providerAzericard: string
+    providerAppStore: string
+    providerGooglePlay: string
+    revenueTier: string
+    revenueBoost: string
+    revenueRefunded: string
+    revenueNet: string
+    /**
+     * ⚠️ Обязательная оговорка под итогом: числа БРУТТО. Apple и Google
+     * удерживают свою долю, и владелец, сверяя итог с поступлением на счёт,
+     * обязан знать, почему они не сходятся.
+     */
+    revenueGrossNote: string
+    /** Содержит {count}. Сколько покупок посчитано по прейскуранту, а не по чеку. */
+    revenueEstimatedNote: string
+    /** Содержит {count}. Покупки в валюте без курса — в итог манатами не вошли. */
+    revenueUnconvertedNote: string
+    /** Содержит {count}. Покупки, у которых суммы нет вовсе. */
+    revenueMissingNote: string
+    revenueEmpty: string
+    revenueRate: string
   }
   /**
    * Что видит сам заблокированный человек — полоса в кабинете.
