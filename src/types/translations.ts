@@ -871,6 +871,48 @@ export interface Translations {
     revenueMissingNote: string
     revenueEmpty: string
     revenueRate: string
+    /**
+     * Вкладка «Отчёты» в модераторке сайта.
+     *
+     * ⚠️ Подписи заведены на все три языка, но вкладки в ПРИЛОЖЕНИИ пока нет:
+     * этот круг правок владелец ограничил сайтом. Ключи лежат в общем словаре
+     * заранее — чтобы, когда вкладка появится и там, не заводить их второй раз
+     * и не разойтись в словах.
+     */
+    reportsTab: string
+    reportsMonth: string
+    reportsSummary: string
+    reportsNewUsers: string
+    reportsBookings: string
+    reportsNewListings: string
+    reportsPayments: string
+    reportsPrint: string
+    reportsExcel: string
+    reportsEmpty: string
+    reportsNoData: string
+    /**
+     * Содержит {count}. Сколько записей лежит без даты.
+     *
+     * ⚠️ Оговорка обязательная: такие записи не попадают ни в один месяц, и без
+     * неё сумма месяцев молча не сошлась бы с общим числом людей или объявлений.
+     */
+    reportsNoDateNote: string
+    reportsGeneratedAt: string
+    reportsColName: string
+    reportsColContacts: string
+    reportsColDate: string
+    reportsColListing: string
+    reportsColGuest: string
+    reportsColStay: string
+    reportsColNights: string
+    reportsColSum: string
+    reportsColStatus: string
+    reportsColOwner: string
+    reportsColTier: string
+    reportsTierStandard: string
+    reportsTierVip: string
+    reportsTierPremium: string
+    reportsBlocked: string
   }
   /**
    * Что видит сам заблокированный человек — полоса в кабинете.

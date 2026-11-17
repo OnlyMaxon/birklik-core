@@ -15,7 +15,8 @@
     "./utils/display": "./src/utils/display.ts",
     "./utils/auth-errors": "./src/utils/auth-errors.ts",
     "./utils/basemap": "./src/utils/basemap.ts",
-    "./utils/images": "./src/utils/images.ts"
+    "./utils/images": "./src/utils/images.ts",
+    "./utils/months": "./src/utils/months.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
