@@ -740,11 +740,14 @@
       "reportsNoData": "No data to report on yet",
       "reportsNoDateNote": "{count} record(s) carry no date and fall into no month.",
       "reportsGeneratedAt": "Report generated",
+      "reportsColItem": "Item",
       "reportsColName": "Name",
       "reportsColContacts": "Contacts",
       "reportsColDate": "Date",
       "reportsColListing": "Listing",
       "reportsColGuest": "Guest",
+      "reportsColCheckIn": "Check-in",
+      "reportsColCheckOut": "Check-out",
       "reportsColStay": "Check-in — check-out",
       "reportsColNights": "Nights",
       "reportsColSum": "Amount",
@@ -754,7 +757,9 @@
       "reportsTierStandard": "Standard",
       "reportsTierVip": "VIP",
       "reportsTierPremium": "Premium",
-      "reportsBlocked": "blocked"
+      "reportsBlocked": "blocked",
+      "reportsFilterHint": "Tap a card to show only that section",
+      "reportsFilterAll": "Show all"
     },
     "blocked": {
       "title": "Access restricted",

@@ -898,11 +898,16 @@ export interface Translations {
      */
     reportsNoDateNote: string
     reportsGeneratedAt: string
+    /** Первый столбец листа оплат: там не имена, а статьи — магазин, тариф, подъём. */
+    reportsColItem: string
     reportsColName: string
     reportsColContacts: string
     reportsColDate: string
     reportsColListing: string
     reportsColGuest: string
+    /** Заезд и выезд ОТДЕЛЬНЫМИ столбцами — только в выгрузке Excel, где это настоящие даты. */
+    reportsColCheckIn: string
+    reportsColCheckOut: string
     reportsColStay: string
     reportsColNights: string
     reportsColSum: string
@@ -913,6 +918,10 @@ export interface Translations {
     reportsTierVip: string
     reportsTierPremium: string
     reportsBlocked: string
+    /** Подсказка над плитками отчёта: карточка — это фильтр, а не просто число. */
+    reportsFilterHint: string
+    /** Снять выбранную плитку и показать все разделы разом. */
+    reportsFilterAll: string
   }
   /**
    * Что видит сам заблокированный человек — полоса в кабинете.

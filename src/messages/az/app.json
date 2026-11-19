@@ -740,11 +740,14 @@
       "reportsNoData": "Hesabat üçün hələ məlumat yoxdur",
       "reportsNoDateNote": "Tarixi olmayan qeyd: {count}. Onlar heç bir aya düşmür.",
       "reportsGeneratedAt": "Hesabat tərtib edilib",
+      "reportsColItem": "Maddə",
       "reportsColName": "Ad",
       "reportsColContacts": "Əlaqə",
       "reportsColDate": "Tarix",
       "reportsColListing": "Elan",
       "reportsColGuest": "Qonaq",
+      "reportsColCheckIn": "Giriş",
+      "reportsColCheckOut": "Çıxış",
       "reportsColStay": "Giriş — çıxış",
       "reportsColNights": "Gecə",
       "reportsColSum": "Məbləğ",
@@ -754,7 +757,9 @@
       "reportsTierStandard": "Adi",
       "reportsTierVip": "VIP",
       "reportsTierPremium": "Premium",
-      "reportsBlocked": "bloklanıb"
+      "reportsBlocked": "bloklanıb",
+      "reportsFilterHint": "Yalnız bir bölməni görmək üçün karta toxunun",
+      "reportsFilterAll": "Hamısını göstər"
     },
     "blocked": {
       "title": "Giriş məhdudlaşdırılıb",

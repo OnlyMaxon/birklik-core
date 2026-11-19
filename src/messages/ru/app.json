@@ -740,11 +740,14 @@
       "reportsNoData": "Данных для отчёта пока нет",
       "reportsNoDateNote": "Записей без даты: {count}. Ни в один месяц они не попадают.",
       "reportsGeneratedAt": "Отчёт составлен",
+      "reportsColItem": "Статья",
       "reportsColName": "Имя",
       "reportsColContacts": "Контакты",
       "reportsColDate": "Дата",
       "reportsColListing": "Объявление",
       "reportsColGuest": "Гость",
+      "reportsColCheckIn": "Заезд",
+      "reportsColCheckOut": "Выезд",
       "reportsColStay": "Заезд — выезд",
       "reportsColNights": "Ночей",
       "reportsColSum": "Сумма",
@@ -754,7 +757,9 @@
       "reportsTierStandard": "Обычный",
       "reportsTierVip": "VIP",
       "reportsTierPremium": "Premium",
-      "reportsBlocked": "заблокирован"
+      "reportsBlocked": "заблокирован",
+      "reportsFilterHint": "Нажмите карточку, чтобы остался только её раздел",
+      "reportsFilterAll": "Показать всё"
     },
     "blocked": {
       "title": "Доступ ограничен",
